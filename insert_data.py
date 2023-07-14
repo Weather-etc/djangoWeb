@@ -1,3 +1,10 @@
+import os
+import sys
+sys.path.insert(0, os.getcwd())
+exit()
+
+
+
 import django; django.setup()
 from datetime import datetime
 from faker import Faker
