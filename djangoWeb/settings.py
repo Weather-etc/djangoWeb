@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'learn',
+    "chatBot",
 ]
 
 MIDDLEWARE = [
@@ -124,8 +124,6 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'static/public'),
-    os.path.join(BASE_DIR, 'static/components'),
 )
 
 # Default primary key field type

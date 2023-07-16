@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from learn.views import index, courses, test
+from djangoWeb.indexViews import index
+from chatBot.views import content
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', index),
-    path('user', courses),
-    path('test', test),
+    path("", index),
+    path("robot/", content)
 ]
