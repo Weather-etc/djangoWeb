@@ -1,10 +1,19 @@
-import sys; sys.path.append('../bot')
+import os.path
+import sys
+sys.path.insert(0, os.path.join(os.getcwd(), 'chatBot\\botModel'))
+sys.path.insert(1, os.path.join(os.getcwd(), 'chatBot\\botModel\\bot'))
+sys.path.insert(2, os.path.join(os.getcwd(), 'chatBot\\botModel\\bot\\data'))
 from bot.bot import ArgiBot
 from py2neo import Graph
 
+import argparse
+parser = argparse.ArgumentParser(description='Get response from robot')
+parser.add_argument('content')
+arg = parser.parse_args()
+
 
 class Bot:
-    def __int__(self,
+    def __init__(self,
                 user_name='neo4j',
                 user_pass='12345678',
                 user_port='7474'):
@@ -16,3 +25,8 @@ class Bot:
         test_bot = ArgiBot(self.graph)
         # 使用ArgiBot.query进行问答
         return test_bot.query(sentence)
+
+
+if __name__ == '__main__':
+    bot = Bot()
+    bot.query(arg['content'])

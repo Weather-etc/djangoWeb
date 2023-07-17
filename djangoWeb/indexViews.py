@@ -1,7 +1,5 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    with open('./templates/index.html', 'r', encoding='utf-8') as f:
-        file = f.read()
-    return HttpResponse(file)
+    return render(request, 'index.html', {})

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "chatBot",
+    "channels",
 ]
 
 MIDDLEWARE = [
@@ -75,6 +76,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "djangoWeb.wsgi.application"
 
+ASGI_APPLICATION = "djangoWeb.asgi.application"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

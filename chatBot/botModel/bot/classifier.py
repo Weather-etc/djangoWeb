@@ -21,9 +21,8 @@ class ArgiClassifier():
 
     def load_entity_data(self) -> None:
         # load data from yaml files
-        module_path = f"{ src.__path__[0] }/bot/data"
         #加载农作物实体
-        with open(f"{ module_path }/example_crops.yaml", "r",encoding='utf-8') as file:
+        with open("./chatBot/botModel/bot/data/example_crops.yaml", "r",encoding='utf-8') as file:
             self.crops = yaml.safe_load(file)
 
         # with open(f"{ module_path }/example_players.yaml", "r") as file:
@@ -33,7 +32,7 @@ class ArgiClassifier():
         #     self.teams = yaml.safe_load(file)
 
         #加载意图
-        with open(f"{ module_path }/example_intents.yaml", "r",encoding='utf-8') as file:
+        with open("./chatBot/botModel/bot/data/example_intents.yaml", "r",encoding='utf-8') as file:
             self.intents = yaml.safe_load(file)["intents"]
 
     def setup_entity_tree(self) -> None:

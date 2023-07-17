@@ -12,7 +12,7 @@ class ArgiActions():
         # load data from yaml files
         module_path = f"{ src.__path__[0] }/bot/data"
 
-        with open(f"{ module_path }/example_intents.yaml", "r",encoding='utf-8') as file:
+        with open(f"./chatBot/botModel/bot/data/example_intents.yaml", "r",encoding='utf-8') as file:
             self.intent_map = yaml.safe_load(file)["intents"]
 
     def get(self, intent: dict):
@@ -27,7 +27,7 @@ class ArgiActions():
 
         cls_name = self.intent_map.get(intent_name).get("action")
         action_cls = getattr(
-            importlib.import_module("src.bot.actions"), cls_name)
+            importlib.import_module("chatBot.botModel.bot.actions"), cls_name)
         #相当于字符串当函数名
         action = action_cls(intent)
         return action
@@ -48,7 +48,7 @@ class ArgiActionBase():
     def load_test_data(self) -> None:
         module_path = f"{ src.__path__[0] }/bot/data"
         #加载农作物实体
-        with open(f"{ module_path }/example_crops.yaml", "r",encoding='utf-8') as file:
+        with open(f"./chatBot/botModel/bot/data/example_crops.yaml", "r",encoding='utf-8') as file:
             self.crops = yaml.safe_load(file)
 
         self.crop_names = {
