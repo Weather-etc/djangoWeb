@@ -15,7 +15,6 @@ from django.core.asgi import get_asgi_application
 from chatBot.routing import websocket_urlpatterns
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangoWeb.settings")
-print('asgi called')
 application = ProtocolTypeRouter({
     "http": get_asgi_application(),
 

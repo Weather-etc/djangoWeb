@@ -56,7 +56,7 @@
         let send_message = document.getElementById("msg_container");
         // get response from robot
 
-        let msg_parse = JSON.parse(msg.data)
+        let msg_parse = JSON.parse(msg.data).message
         let date = new Date();
         let hour = date.getHours();
         let mm = date.getMinutes();
