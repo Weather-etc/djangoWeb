@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "daphne",
     "django.contrib.staticfiles",
-    "chatBot",
+
     "channels",
+    "chatBot",
 ]
 
 MIDDLEWARE = [
@@ -75,13 +77,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "djangoWeb.wsgi.application"
-
 ASGI_APPLICATION = "djangoWeb.asgi.application"
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
+        },
     }
-}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -100,6 +101,12 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "sesame.backends.ModelBackend",
+]
+SESAME_MAX_AGE = 30
 
 AUTH_PASSWORD_VALIDATORS = [
     {

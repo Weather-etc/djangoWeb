@@ -22,7 +22,7 @@
 
         <div class="home-search"
              id="home-search"
-            onclick="showMsg();sendMsg();">
+            onclick="sendMsg();">
           <img
             alt="image"
             src="../static/chatBot/public/Icons/search.svg"
@@ -35,12 +35,8 @@
 </div>
 
     <script type="text/javascript">
-    function showMsg() {
-        let res = [{{ response|safe }}];
+    function showMsg(msg) {
         let send_message = document.getElementById("msg_container");
-        let message = document.getElementById("text_input");
-        // show msg sent
-        let str = message.value;
         let date = new Date();
         let hour = date.getHours();
         let mm = date.getMinutes();
@@ -48,17 +44,19 @@
         let ans = '<div class="chat_right_item_1 clearfix">热巴</div>' +
             '<div class="chat_right_item_2">' +
             '<div class="chat_right_time clearfix">' + time + '</div>' +
-            '<div class="chat_right_content clearfix">' + str + '</div>'
+            '<div class="chat_right_content clearfix">' + msg + '</div>'
             + '</div>';
         let oLi = document.createElement("div");
         oLi.setAttribute("class", "chat_right");
         oLi.innerHTML = ans;
         send_message.append(oLi);
     }
+
     function showMsg_robot(msg){
         let send_message = document.getElementById("msg_container");
         // get response from robot
 
+        let msg_parse = JSON.parse(msg.data)
         let date = new Date();
         let hour = date.getHours();
         let mm = date.getMinutes();
@@ -66,7 +64,7 @@
         let res_html = '<div class="chat_left_item_1 clearfix">robot</div>' +
             '<div class="chat_left_item_2">' +
             '<div class="chat_left_time clearfix">' + time + '</div>' +
-            '<div class="chat_left_content clearfix">' + msg + '</div>' +
+            '<div class="chat_left_content clearfix">' + msg_parse + '</div>' +
             '</div>';
         let res_entity = document.createElement("div");
         res_entity.setAttribute("class", "class_left");
@@ -75,16 +73,6 @@
 
         document.getElementById('text_input').value = '';
     }
-    </script>
-
-    <script type="text/javascript">
-        const ws_protocol = (window.location.protocol == "https:") ? 'wss://': 'ws://';
-        const chat_socket = new WebSocket(
-            ws_protocol + window.location.host + '/ws/chat/'
-        );
-        // chat_socket.onopen = function(){};
-        chat_socket.onmessage = showMsg_robot;
-        // chat_socket.onclose = function (){};
 
         // send msg to backend
         function sendMsg(){
@@ -93,7 +81,16 @@
             chat_socket.send(JSON.stringify({
                 "message": msg
             }));
+            showMsg(msg);
             msg_box.value = "";
         }
+
+        const ws_protocol = (window.location.protocol == "https:") ? 'wss://': 'ws://';
+        const chat_socket = new WebSocket(
+            ws_protocol + window.location.host + '/ws/chat/'
+        );
+        // chat_socket.onopen = function(){};
+        chat_socket.onmessage = showMsg_robot;
+        // chat_socket.onclose = function (){};
     </script>
 {% endblock %}
