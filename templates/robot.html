@@ -7,31 +7,31 @@
 <div class="msg-container"
        data-width="100%"
        id="msg_container"
-       style="overflow: scroll; width: 100%; height: 792px; overflow-x: hidden; overflow-y: hidden">
-          <!-- insert here -->
+       style="overflow: scroll; width: 100%; height: 700px; overflow-x: hidden">
+        <!-- insert here -->
+</div>
 
-      <div class="home-center">
-        <div class="home-border">
-        <div class="home-filter">
-        <input
-          type="text"
-          placeholder="Destination"
-          class="home-textinput input"
-          id="text_input"
-        />
+<div class="home-center" style="width: 1024px; height: 58px">
+    <div class="home-border" style="width: 1024px">
+    <div class="home-filter">
+    <input
+      type="text"
+      placeholder="Destination"
+      class="home-textinput input"
+      id="text_input"
+    />
 
-        <div class="home-search"
-             id="home-search"
-            onclick="sendMsg();">
-          <img
-            alt="image"
-            src="../static/chatBot/public/Icons/search.svg"
-            class="home-icon"
-          />
-        </div>
-      </div>
+    <div class="home-search"
+         id="home-search"
+        onclick="sendMsg();">
+      <img
+        alt="image"
+        src="../static/chatBot/public/Icons/search.svg"
+        class="home-icon"
+      />
     </div>
-  </div>
+    </div>
+    </div>
 </div>
 
     <script type="text/javascript">
@@ -41,7 +41,7 @@
         let hour = date.getHours();
         let mm = date.getMinutes();
         let time = hour + ':' + mm;
-        let ans = '<div class="chat_right_item_1 clearfix">热巴</div>' +
+        let ans = '<div class="chat_right_item_1 clearfix">文涛</div>' +
             '<div class="chat_right_item_2">' +
             '<div class="chat_right_time clearfix">' + time + '</div>' +
             '<div class="chat_right_content clearfix">' + msg + '</div>'
@@ -67,7 +67,7 @@
             '<div class="chat_left_content clearfix">' + msg_parse + '</div>' +
             '</div>';
         let res_entity = document.createElement("div");
-        res_entity.setAttribute("class", "class_left");
+        res_entity.setAttribute("class", "chat_left");
         res_entity.innerHTML = res_html;
         send_message.append(res_entity);
 
