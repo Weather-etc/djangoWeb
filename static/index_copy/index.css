@@ -97,12 +97,13 @@
   top: 0px;
   flex: 1;
   color: var(--dl-color-gray-white);
+  float: left;
   right: 0px;
-  width: 206px;
-  height: 100vh;
-  display: flex;
+  width: 1200px;
+  height: 1000px;
+  visibility: hidden;
   z-index: 100;
-  position: absolute;
+  position: relative;
   transform: translateX(100%);
   align-self: flex-end;
   align-items: center;

@@ -1,0 +1,85 @@
+.testimonial-card2-testimonial-card {
+  width: 100%;
+  display: flex;
+  padding: var(--dl-space-space-threeunits);
+  max-width: var(--dl-size-size-maxwidth);
+  background: #fff;
+  box-shadow: 5px 5px 10px 0px rgba(18, 18, 18, 0.1);
+  align-items: center;
+  justify-content: space-between;
+}
+.testimonial-card2-testimonial {
+  display: flex;
+  align-items: flex-start;
+  margin-right: var(--dl-space-space-threeunits);
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testimonial-card2-icon {
+  width: var(--dl-size-size-small);
+  flex-shrink: 0;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.testimonial-card2-text {
+  color: var(--dl-color-gray-500);
+  font-size: 1.15rem;
+  margin-bottom: var(--dl-space-space-twounits);
+}
+.testimonial-card2-container {
+  display: flex;
+  position: relative;
+}
+.testimonial-card2-text1 {
+  font-size: 20px;
+  font-family: cursive;
+  font-weight: 400;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+.testimonial-card2-root-class-name {
+  align-self: flex-start;
+}
+.testimonial-card2-root-class-name1 {
+  align-self: flex-start;
+}
+.testimonial-card2-root-class-name2 {
+  align-self: flex-start;
+}
+.testimonial-card2-root-class-name3 {
+  align-self: flex-start;
+}
+@media(max-width: 991px) {
+  .testimonial-card2-text1 {
+    max-height: var(--dl-size-size-large);
+  }
+}
+@media(max-width: 767px) {
+  .testimonial-card2-testimonial-card {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .testimonial-card2-testimonial {
+    margin-right: var(--dl-space-space-twounits);
+  }
+  .testimonial-card2-icon {
+    height: var(--dl-size-size-small);
+  }
+}
+@media(max-width: 479px) {
+  .testimonial-card2-testimonial-card {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    flex-direction: column;
+    padding-bottom: var(--dl-space-space-twounits);
+  }
+  .testimonial-card2-testimonial {
+    align-items: center;
+    margin-right: 0px;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .testimonial-card2-text {
+    text-align: left;
+  }
+}

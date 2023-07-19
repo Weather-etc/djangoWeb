@@ -17,14 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import re_path
 from django.urls import path
-from djangoWeb.indexViews import index
 from django.conf.urls import include
-from chatBot.views import content
-from chatBot import consumers
+from detailsPage.views import show_detail
 
 print('urls called')
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", index),
-    re_path(r"robot/", include('chatBot.urls')),
+    re_path(r"", include('chatBot.urls')),
+    path("detail/", show_detail)
 ]

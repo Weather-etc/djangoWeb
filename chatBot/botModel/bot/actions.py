@@ -1,5 +1,4 @@
 import importlib
-import src
 import yaml
 
 
@@ -10,7 +9,7 @@ class ArgiActions():
 
     def load_data(self) -> None:
         # load data from yaml files
-        module_path = f"{ src.__path__[0] }/bot/data"
+        module_path = f"./chatBot/botModel/bot/data"
 
         with open(f"./chatBot/botModel/bot/data/example_intents.yaml", "r",encoding='utf-8') as file:
             self.intent_map = yaml.safe_load(file)["intents"]
@@ -46,7 +45,7 @@ class ArgiActionBase():
         self.error = False
 
     def load_test_data(self) -> None:
-        module_path = f"{ src.__path__[0] }/bot/data"
+        module_path = f"./chatBot/botModel/bot/data"
         #加载农作物实体
         with open(f"./chatBot/botModel/bot/data/example_crops.yaml", "r",encoding='utf-8') as file:
             self.crops = yaml.safe_load(file)

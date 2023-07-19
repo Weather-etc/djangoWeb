@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from chatBot.botModel.app.robot import Bot
 
 # Create your views here.
-web_path = "./templates/robot.html"
+web_path = "./templates/index.html"
 
 
 def content(request):
@@ -12,5 +12,5 @@ def content(request):
         cont = request.GET['ques']
         print(cont)
         res = bot.query(cont)
-        return render(request, 'robot.html', {'response': res})
-    return render(request, 'robot.html', {'response': ''})
+        return render(request, 'index.html', {'response': res})
+    return render(request, 'index.html', {'response': ''})

@@ -1,6 +1,5 @@
 import yaml
 import ahocorasick
-import src
 import jieba
 
 
