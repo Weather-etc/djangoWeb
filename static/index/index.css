@@ -127,7 +127,6 @@
   transition: 0.5s;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--dl-color-success-300);
 }
 .home-nav {
   display: flex;
@@ -3644,6 +3643,7 @@
   }
   .home-mobile-menu {
     padding: 16px;
+
   }
   .home-hero-content {
     gap: var(--dl-space-space-threeunits);

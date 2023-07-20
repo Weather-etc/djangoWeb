@@ -16,7 +16,14 @@ Enjoy! :) Don't forget to click the heart if you like it! -->
   <div class="chatbox">
     <div class="top-bar">
       <div class="avatar"><p>V</p></div>
-      <div class="name">Voldemort</div>
+      <div class="name">KG Robot
+        <div class="bubble" id="bubbles"   style="visibility: hidden; margin: 0px; padding: 0px">
+            <div class="ellipsis one"></div>
+            <div class="ellipsis two"></div>
+            <div class="ellipsis three"></div>
+          </div>
+      </div>
+
       <div class="icons">
         <i class="fas fa-phone"></i>
         <i class="fas fa-video"></i>
@@ -37,11 +44,10 @@ Enjoy! :) Don't forget to click the heart if you like it! -->
     </div>
   </div>
 
-
   <div class="messages">
   <div class="profile">
     <div class="avatar"><p>H</p></div>
-    <div class="name2">Harry<p class="email">Harry@potter.com</p></div>
+    <div class="name2">Robot<p class="email">Harry@potter.com</p></div>
   </div>
 
   </div>
@@ -66,9 +72,14 @@ Enjoy! :) Don't forget to click the heart if you like it! -->
         oLi.setAttribute("style", "margin-right=15px")
         oLi.innerHTML = ans;
         send_message.append(oLi);
+
+        let bubbles = document.getElementById("bubbles");
+        bubbles.setAttribute("style", "visibility: visible; margin: 0px; padding: 0px");
     }
 
     function showMsg_robot(msg){
+        let bubbles = document.getElementById("bubbles");
+        bubbles.setAttribute("style", "visibility: hidden; margin: 0px; padding: 0px");
         let send_message = document.getElementById("msg_container");
         // get response from robot
 

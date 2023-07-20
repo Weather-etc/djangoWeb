@@ -237,12 +237,12 @@
             <div data-thq="thq-burger-menu" class="home-burger-menu">
 
               <div class="home-hamburger" style="border-radius: 30px;position: fixed; bottom: 110px; right: 60px">
-                <img alt="image" src="../static/index/public/hamburger.svg" class="home-icon" />
+                <img alt="image" style="height: 20px"    src="{% static 'index/public/bot.png' %}" class="home-icon" />
               </div>
             </div>
 
             <div data-thq="thq-mobile-menu"
-                 style="background: linear-gradient(to bottom left, #79C7C5 40%, #F9FBFF 100%);"
+                     style="background: rgb(255, 255, 255, 0.4);"
                  class="home-mobile-menu">
               <div
                 data-thq="thq-mobile-menu-nav"
@@ -294,28 +294,7 @@
 
           </div>
         </section>
-        <section class="home-note">
-          <h2 class="home-caption01">
-            The most comprehensive lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna.
-          </h2>
-        </section>
-        <section class="home-statistics">
-          <div class="home-content">
-            <div class="home-stat">
-              <h3 class="home-header01">$1.69M</h3>
-              <span class="home-caption02">Consectetur adipiscing</span>
-            </div>
-            <div class="home-stat1">
-              <h3 class="home-header02">Multiverse</h3>
-              <span class="home-caption03">Unde omnis iste</span>
-            </div>
-            <div class="home-stat2">
-              <h3 class="home-header03">500K</h3>
-              <span class="home-caption04">Accusantium doloremque</span>
-            </div>
-          </div>
+
         </section>
         <section class="home-slider">
           <div class="home-header04">
@@ -330,14 +309,7 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <div class="home-slide-titles">
-              <div class="slide-title"><span>Metaverse</span></div>
-              <div class="slide-title slide-title-active">
-                <span>Ecosystems</span>
-              </div>
-              <div class="slide-title"><span>Development</span></div>
-              <div class="slide-title"><span>Integration</span></div>
-            </div>
+
           </div>
         </section>
         <section class="home-slides">
@@ -348,20 +320,21 @@
                   <div data-role="current-banner" class="banner">
                     <img
                       alt="image"
-                      src="../static/index/public/slider-ecosystems-400h.png"
+                      src="{% static 'index/public/01.jpg' %}"
+                                            style="width: 400px; height: 400px"
+
                       class="home-image01"
                     />
                     <div class="home-content01">
                       <div class="home-header05">
-                        <h3 class="home-heading02">Metaverse</h3>
+                        <h3 class="home-heading02">水稻</h3>
                         <p class="home-caption06">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.
+                          稻（Oryza sativa L.），通称水稻，是禾本科一年生水生草本（已有多年生稻品种）。
+                            秆直立，高0.5-1.5米，随品种而异。叶鞘无毛、松弛；叶舌披针形；叶片线状披针形，宽约1厘米，无毛，粗糙。
                         </p>
                       </div>
                       <div class="home-more">
-                        <span class="home-caption07">Read More</span>
+                          <span class="home-caption07"><a href="1270.0.1:8000/detail/?entity=水稻" target="_blank">Read More</a></span>
                         <svg viewBox="0 0 1024 1024" class="home-icon09">
                           <path
                             d="M298.667 341.333h323.669l-353.835 353.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l353.835-353.835v323.669c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-426.667c0-5.803-1.152-11.307-3.243-16.341s-5.163-9.728-9.216-13.781c-0.043-0.043-0.043-0.043-0.085-0.085-3.925-3.925-8.619-7.083-13.781-9.216-5.035-2.091-10.539-3.243-16.341-3.243h-426.667c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
@@ -373,20 +346,21 @@
                   <div data-role="current-banner" class="banner">
                     <img
                       alt="image"
-                      src="../static/index/public/slider-ecosystems-400h.png"
+                      src="{% static 'index/public/02.jpg' %}"
+                                            style="width: 400px; height: 400px"
+
                       class="home-image02"
                     />
                     <div class="home-content02">
                       <div class="home-header06">
-                        <h3 class="home-heading03">Ecosystems</h3>
+                        <h3 class="home-heading03">西瓜</h3>
                         <p class="home-caption08">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.
+                          西瓜，是葫芦科西瓜属一年生蔓生藤本植物 ，形态一般近似于球形或椭圆形，颜色有深绿、浅绿或带有黑绿条带或斑纹；
+                            瓜籽多为黑色，呈椭圆形，头尖；茎枝粗壮，有淡黄褐色的柔毛；叶片如纸，呈三角状卵形，边缘呈波状。花果期5—6月。
                         </p>
                       </div>
                       <div class="home-more1">
-                        <span class="home-caption09">Read More</span>
+                          <span class="home-caption07"><a href="1270.0.1:8000/detail/?entity=西瓜" target="_blank">Read More</a></span>
                         <svg viewBox="0 0 1024 1024" class="home-icon11">
                           <path
                             d="M298.667 341.333h323.669l-353.835 353.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l353.835-353.835v323.669c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-426.667c0-5.803-1.152-11.307-3.243-16.341s-5.163-9.728-9.216-13.781c-0.043-0.043-0.043-0.043-0.085-0.085-3.925-3.925-8.619-7.083-13.781-9.216-5.035-2.091-10.539-3.243-16.341-3.243h-426.667c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
@@ -398,20 +372,21 @@
                   <div data-role="current-banner" class="banner">
                     <img
                       alt="image"
-                      src="../static/index/public/slider-ecosystems-400h.png"
+                      src="{% static 'index/public/03.jpg' %}"
+                                            style="width: 400px; height: 400px"
+
                       class="home-image03"
                     />
                     <div class="home-content03">
                       <div class="home-header07">
-                        <h3 class="home-heading04">Development</h3>
+                        <h3 class="home-heading04">小麦</h3>
                         <p class="home-caption10">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.
+                          小麦（Triticum aestivum L.）是小麦属植物的统称，代表种为普通小麦是禾本科植物，
+                            是一种在世界各地广泛种植的谷类作物，小麦的颖果是人类的主食之一，磨成面粉后可制作面包、馒头、饼干、面条等食物。
                         </p>
                       </div>
                       <div class="home-more2">
-                        <span class="home-caption11">Read More</span>
+                          <span class="home-caption07"><a href="1270.0.1:8000/detail/?entity=小麦" target="_blank">Read More</a></span>
                         <svg viewBox="0 0 1024 1024" class="home-icon13">
                           <path
                             d="M298.667 341.333h323.669l-353.835 353.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l353.835-353.835v323.669c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-426.667c0-5.803-1.152-11.307-3.243-16.341s-5.163-9.728-9.216-13.781c-0.043-0.043-0.043-0.043-0.085-0.085-3.925-3.925-8.619-7.083-13.781-9.216-5.035-2.091-10.539-3.243-16.341-3.243h-426.667c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
@@ -423,20 +398,20 @@
                   <div data-role="current-banner" class="banner">
                     <img
                       alt="image"
-                      src="../static/index/public/slider-ecosystems-400h.png"
+                      src="{% static 'index/public/04.jpg' %}"
+                      style="width: 400px; height: 400px"
                       class="home-image04"
                     />
                     <div class="home-content04">
                       <div class="home-header08">
-                        <h3 class="home-heading05">Integration</h3>
+                        <h3 class="home-heading05">苹果</h3>
                         <p class="home-caption12">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.
+                          苹果（Malus pumila Mill.），蔷薇科苹果属落叶乔木植物，茎干较高，小枝短而粗，呈圆柱形；叶片椭圆形，表面光滑，
+                            边缘有锯齿，叶柄粗壮；花朵较小呈伞状，淡粉色，表面有绒毛；果实较大，呈扁球形，果梗短粗；花期5月；果期7~10月。
                         </p>
                       </div>
                       <div class="home-more3">
-                        <span class="home-caption13">Read More</span>
+                          <span class="home-caption07"><a href="1270.0.1:8000/detail/?entity=苹果" target="_blank">Read More</a></span>
                         <svg viewBox="0 0 1024 1024" class="home-icon15">
                           <path
                             d="M298.667 341.333h323.669l-353.835 353.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l353.835-353.835v323.669c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-426.667c0-5.803-1.152-11.307-3.243-16.341s-5.163-9.728-9.216-13.781c-0.043-0.043-0.043-0.043-0.085-0.085-3.925-3.925-8.619-7.083-13.781-9.216-5.035-2.091-10.539-3.243-16.341-3.243h-426.667c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
@@ -488,103 +463,8 @@ new BlazeSlider(el, {
             ></dangerous-html>
           </div>
         </section>
-        <section class="home-get-started">
-          <div class="home-header-container1">
-            <div class="home-header09">
-              <h2 class="home-heading06">
-                Companies will dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt ut labore veniam and more
-                opportunities.
-              </h2>
-              <p class="home-caption14">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="home-button1">
-              <button class="button"><span>Get started today</span></button>
-            </div>
-          </div>
-          <img
-            alt="image"
-            src="../static/index/public/getstarted-800w.png"
-            class="home-image05"
-          />
-        </section>
-        <section class="home-objectives">
-          <div class="home-content05">
-            <span class="home-text19">Objectives</span>
-            <div class="home-objectives-list">
-              <div class="objective">
-                <h3 class="home-text20">Growth</h3>
-                <p class="home-text21">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div class="objective home-objective1">
-                <h3 class="home-text22">Develop</h3>
-                <p class="home-text23">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div class="objective home-objective2">
-                <h3 class="home-text24">Optimize</h3>
-                <p class="home-text25">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="home-growth">
-          <div class="home-content06">
-            <div class="home-header10">
-              <div class="home-header11">
-                <h2 class="home-heading07">
-                  <span>唐文涛</span>
-                  <span class="home-text27">CEO</span>
-                  <br />
-                </h2>
-              </div>
-              <p class="home-caption15">
-                迁移学习、计算机视觉、NLP、强化学习殿堂级人物。本组最有希望成为ACM Turing Award得主的人。领衔本项目人工智能部分研发工作。
-              </p>
-              <p class="home-caption16">
-                「新しい未来を作ると目指しています」
-              </p>
-            </div>
-            <div class="home-testimonial">
-              <div class="home-content07">
-                <span class="home-text29">Philosophy</span>
-                <p class="home-text30">
-                  “Experience is the philosophy of life.”-Wentao Tang
-                </p>
-              </div>
-              <div class="home-information">
-                <div class="home-author">
-                  <img
-                    alt="image"
-                    src="{% static 'index/public/twt_sized.png' %}"
-                    class="home-icon21"
-                  />
-                  <span class="home-name">唐文涛</span>
-                </div>
-                <img alt="image" src="../static/index/public/logo.png" class="home-from" />
-              </div>
-            </div>
-          </div>
-          <div class="home-images">
-            <div class="home-square"></div>
-            <img
-              alt="image"
-              src="../static/index/public/twt_sized.png"
-              class="home-image06"
-            />
-          </div>
-        </section>
+
+
         <section class="home-experience">
           <div class="home-images1">
             <div class="home-square1"></div>
@@ -637,606 +517,155 @@ new BlazeSlider(el, {
             </div>
           </div>
         </section>
-        <section class="home-create">
-          <div class="home-content10">
-            <div class="home-header14">
-              <h2 class="home-heading09">
-                <span>Create your own</span>
-                <span class="home-text40">environment</span>
-                <span>now!</span>
-                <br />
-              </h2>
-            </div>
-            <button class="home-button3 button">
-              <span>
-                <span>Get started today</span>
-                <br />
-              </span>
-            </button>
-          </div>
-        </section>
-        <section class="home-comparision">
-          <div class="home-header-container3">
-            <div class="home-header15">
-              <h2 class="home-heading10">
-                <span>Environment c</span>
-                <span class="home-text47">omparision</span>
-                <br />
-              </h2>
-            </div>
-            <p class="home-caption18">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
-              eiusmod.
-            </p>
-          </div>
-          <div class="home-table">
-            <div class="home-row">
-              <div class="home-headers">
-                <span class="home-text49">Placeholder</span>
-              </div>
-              <div class="home-plans">
-                <div class="home-row01">
-                  <span class="home-text50">TOGHTR</span>
-                  <span class="home-text51">AGENCY</span>
-                  <span class="home-text52">FRELLANCE</span>
-                </div>
-              </div>
-            </div>
-            <div class="home-row02">
-              <div class="home-headers1">
-                <span class="home-text53">
-                  Duis aute irure dolor in reprehenderit
-                </span>
-              </div>
-              <div class="home-plans1">
-                <div class="home-row03">
-                  <div class="value">
-                    <div class="check-check">
-                      <svg viewBox="0 0 1024 1024" class="check-icon">
-                        <path
-                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="value">
-                    <div class="check-check">
-                      <svg viewBox="0 0 1024 1024" class="check-icon">
-                        <path
-                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="value">
-                    <div class="check-check">
-                      <svg viewBox="0 0 1024 1024" class="check-icon">
-                        <path
-                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="home-row04">
-              <div class="home-headers2">
-                <span class="home-text54">Lorem ipsum dolor sit amet</span>
-              </div>
-              <div class="home-plans2">
-                <div class="home-row05">
-                  <div class="value">
-                    <div class="check-check">
-                      <svg viewBox="0 0 1024 1024" class="check-icon">
-                        <path
-                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="value">
-                    <div class="check-check">
-                      <svg viewBox="0 0 1024 1024" class="check-icon">
-                        <path
-                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="value"><div class="line-line"></div></div>
-                </div>
-              </div>
-            </div>
-            <div class="home-row06">
-              <div class="home-headers3">
-                <span class="home-text55">
-                  Duis aute irure dolor in reprehenderit
-                </span>
-              </div>
-              <div class="home-plans3">
-                <div class="home-row07">
-                  <div class="value">
-                    <span class="home-text56">Custom</span>
-                  </div>
-                  <div class="value"><div class="line-line"></div></div>
-                  <div class="value"><div class="line-line"></div></div>
-                </div>
-              </div>
-            </div>
-            <div class="home-row08">
-              <div class="home-headers4">
-                <span class="home-text57">
-                  Duis aute irure dolor in reprehenderit
-                </span>
-              </div>
-              <div class="home-plans4">
-                <div class="home-row09">
-                  <div class="value">
-                    <span class="home-text58">Unlimited</span>
-                  </div>
-                  <div class="value">
-                    <span class="home-text59">Limited</span>
-                  </div>
-                  <div class="value"><div class="line-line"></div></div>
-                </div>
-              </div>
-            </div>
-            <div class="home-row10">
-              <div class="home-headers5">
-                <span class="home-text60">Lorem ipsum dolor sit amet</span>
-              </div>
-              <div class="home-plans5">
-                <div class="home-row11">
-                  <div class="value">
-                    <div class="check-check">
-                      <svg viewBox="0 0 1024 1024" class="check-icon">
-                        <path
-                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="value"><div class="line-line"></div></div>
-                  <div class="value">
-                    <span class="home-text61">Limited</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="home-row12">
-              <div class="home-headers6">
-                <span class="home-text62">Lorem ipsum dolor sit amet</span>
-              </div>
-              <div class="home-plans6">
-                <div class="home-row13">
-                  <div class="value">
-                    <div class="check-check">
-                      <svg viewBox="0 0 1024 1024" class="check-icon">
-                        <path
-                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="value">
-                    <div class="check-check">
-                      <svg viewBox="0 0 1024 1024" class="check-icon">
-                        <path
-                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="value">
-                    <div class="check-check">
-                      <svg viewBox="0 0 1024 1024" class="check-icon">
-                        <path
-                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="home-row14">
-              <div class="home-headers7">
-                <span class="home-text63">Lorem ipsum dolor sit amet</span>
-              </div>
-              <div class="home-plans7">
-                <div class="home-row15">
-                  <div class="value">
-                    <div class="check-check">
-                      <svg viewBox="0 0 1024 1024" class="check-icon">
-                        <path
-                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="value">
-                    <span class="home-text64">Limited</span>
-                  </div>
-                  <div class="value"><div class="line-line"></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="home-data">
-          <div class="home-header-container4">
-            <div class="home-header16">
-              <div class="home-row16">
-                <h2 class="home-heading11">
-                  <span>Understand your data to&nbsp;manage all in one</span>
-                  <span class="home-text66">platform</span>
+      <section class="home-growth">
+          <div class="home-content06">
+            <div class="home-header10">
+              <div class="home-header11">
+                <h2 class="home-heading07">
+                  <span>唐文涛</span>
+                  <span class="home-text27"></span>
                   <br />
                 </h2>
               </div>
+              <p class="home-caption15">
+                负责本项目对话机器人部分研发工作。
+              </p>
+              <p class="home-caption16">
+                「新しい未来を作ると目指しています」
+              </p>
             </div>
-            <p class="home-caption19">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <div class="home-testimonial">
+              <div class="home-content07">
+                <span class="home-text29">Philosophy</span>
+                <p class="home-text30">
+                  “Experience is the philosophy of life.”-Wentao Tang
+                </p>
+              </div>
+              <div class="home-information">
+                <div class="home-author">
+                  <img
+                    alt="image"
+                    src="{% static 'index/public/twt_sized.png' %}"
+                    class="home-icon21"
+                  />
+                  <span class="home-name">唐文涛</span>
+                </div>
+                <img alt="image" src="../static/index/public/logo.png" class="home-from" />
+              </div>
+            </div>
           </div>
-          <div class="home-content11">
-            <div class="home-image08">
-              <img
-                alt="image"
-                src="../static/index/public/data-1400w.png"
-                class="home-image09"
-              />
+          <div class="home-images">
+            <div class="home-square"></div>
+            <img
+              alt="image"
+              src="../static/index/public/twt_sized.png"
+              class="home-image06"
+            />
+          </div>
+        </section>
+
+
+              <section class="home-experience">
+          <div class="home-images1">
+            <div class="home-square1"></div>
+            <img
+              alt="image"
+              src="../static/index/public/xiechang_sized.png"
+              class="home-image07"
+            />
+          </div>
+          <div class="home-content08">
+            <div class="home-header10">
+              <div class="home-header-container2">
+                <div class="home-header13">
+                  <h2 class="home-heading08">
+                    <span>谢畅</span>
+                    <span class="home-text32"></span>
+                  </h2>
+                </div>
+                <p class="home-caption17" style="height: 355px">
+                    负责本项目的爬虫和数据处理工作。
+                </p>
+              </div>
+               <p class="home-caption16">
+                   Nullptr
+              </p>
+
             </div>
-            <div class="home-accordion">
-              <div data-role="accordion-container" class="accordion">
-                <div>
-                  <h3 class="home-header17">Management</h3>
-                  <p data-role="accordion-content" class="accordion-content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
-                  </p>
-                </div>
-                <div
-                  class="icon-container-icon-container icon-container-root-class-name"
-                >
-                  <svg
-                    viewBox="0 0 1024 1024"
-                    data-role="accordion-icon-closed"
-                    class="icon-container-icon"
-                  >
-                    <path
-                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                    ></path></svg
-                  ><svg
-                    viewBox="0 0 1024 1024"
-                    data-role="accordion-icon-open"
-                    class="icon-container-icon2"
-                  >
-                    <path
-                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                    ></path>
-                  </svg>
-                </div>
+            <div class="home-testimonial1">
+              <div class="home-content09">
+                <span class="home-text37">Philosophy</span>
+                <p class="home-text38">
+                  "The everything of life is nothing."-Chang Xie
+                </p>
               </div>
-              <div data-role="accordion-container" class="accordion">
-                <div>
-                  <h3 class="home-header18">Integrations</h3>
-                  <p data-role="accordion-content" class="accordion-content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
-                  </p>
+              <div class="home-information1">
+                <div class="home-author1">
+                  <img
+                    alt="image"
+                    src="{% static 'index/public/xiechang_sized.png' %}"
+                    class="home-icon30"
+                  />
+                  <span class="home-name1">谢畅</span>
                 </div>
-                <div
-                  class="icon-container-icon-container icon-container-root-class-name1"
-                >
-                  <svg
-                    viewBox="0 0 1024 1024"
-                    data-role="accordion-icon-closed"
-                    class="icon-container-icon"
-                  >
-                    <path
-                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                    ></path></svg
-                  ><svg
-                    viewBox="0 0 1024 1024"
-                    data-role="accordion-icon-open"
-                    class="icon-container-icon2"
-                  >
-                    <path
-                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-              <div data-role="accordion-container" class="accordion">
-                <div>
-                  <h3 class="home-header19">Customer Solutions</h3>
-                  <p data-role="accordion-content" class="accordion-content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
-                  </p>
-                </div>
-                <div
-                  class="icon-container-icon-container icon-container-root-class-name2"
-                >
-                  <svg
-                    viewBox="0 0 1024 1024"
-                    data-role="accordion-icon-closed"
-                    class="icon-container-icon"
-                  >
-                    <path
-                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                    ></path></svg
-                  ><svg
-                    viewBox="0 0 1024 1024"
-                    data-role="accordion-icon-open"
-                    class="icon-container-icon2"
-                  >
-                    <path
-                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-              <div data-role="accordion-container" class="accordion">
-                <div>
-                  <h3 class="home-header20">Recruiting</h3>
-                  <p data-role="accordion-content" class="accordion-content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
-                  </p>
-                </div>
-                <div
-                  class="icon-container-icon-container icon-container-root-class-name3"
-                >
-                  <svg
-                    viewBox="0 0 1024 1024"
-                    data-role="accordion-icon-closed"
-                    class="icon-container-icon"
-                  >
-                    <path
-                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                    ></path></svg
-                  ><svg
-                    viewBox="0 0 1024 1024"
-                    data-role="accordion-icon-open"
-                    class="icon-container-icon2"
-                  >
-                    <path
-                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-              <div>
-                <dangerous-html
-                  html="<script>
- /*
-  Accordion - Code Embed
-  */
-  const accordionContainers = document.querySelectorAll('[data-role='accordion-container']'); // All accordion containers
-  const accordionContents = document.querySelectorAll('[data-role='accordion-content']'); // All accordion content
-  const accordionIconsClosed = document.querySelectorAll('[data-role='accordion-icon-closed']'); // All accordion closed icons
-  const accordionIconsOpen = document.querySelectorAll('[data-role='accordion-icon-open']'); // All accordion open icons
-
-  accordionContents.forEach((accordionContent) => {
-      accordionContent.style.display = 'none'; //Hides all accordion contents
-  });
-
-  accordionIconsClosed.forEach((icon) => {
-    icon.style.display = 'flex'
-  })
-
-  accordionIconsOpen.forEach((icon) => {
-    icon.style.display = 'none'
-  })
-
-  accordionContainers.forEach((accordionContainer, index) => {
-      accordionContainer.addEventListener('click', () => {
-          if (accordionContents[index].style.display === 'flex') {
-              // If the accordion is already open, close it
-              accordionContents[index].style.display = 'none';
-              accordionIconsClosed[index].style.display = 'flex';
-              accordionIconsOpen[index].style.display = 'none'
-          } else {
-              // If the accordion is closed, open it
-              accordionContents.forEach((accordionContent) => {
-                  accordionContent.style.display = 'none'; //Hides all accordion contents
-              });
-
-              accordionIconsClosed.forEach((accordionIcon) => {
-                  accordionIcon.style.display = 'flex'; // Resets all icon transforms to 0deg (default)
-              });
-
-              accordionIconsOpen.forEach((accordionIcon) => {
-                accordionIcon.style.display = 'none';
-              })
-              
-              accordionContents[index].style.display = 'flex'; // Shows accordion content
-              accordionIconsClosed[index].style.display = 'none'; // Rotates accordion icon 180deg
-              accordionIconsOpen[index].style.display = 'flex';
-          }
-      });
-  });
-</script>
-"
-                ></dangerous-html>
+                <img
+                  alt="image"
+                  src="../static/index/public/logo.png"
+                  class="home-from1"
+                />
               </div>
             </div>
           </div>
         </section>
-        <section class="home-customer">
-          <div class="home-header21">
-            <h2 class="home-heading12">
-              <span>Customer validation is an essential phase of the</span>
-              <span class="home-text69">product development process</span>
-              <br />
-            </h2>
-          </div>
-          <div class="home-quotes">
-            <div class="home-quote">
-              <p class="home-quote1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <div class="home-author2">
-                <span class="home-name2">Joanna Smith</span>
-                <span class="home-location">Briville</span>
+      <section class="home-growth">
+          <div class="home-content06">
+            <div class="home-header10">
+              <div class="home-header11">
+                <h2 class="home-heading07">
+                  <span>徐章博</span>
+                  <span class="home-text27"></span>
+                  <br />
+                </h2>
               </div>
-            </div>
-            <div class="home-quote2">
-              <p class="home-quote3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <p class="home-caption15">
+                协助CTO完成前端设计
               </p>
-              <div class="home-author3">
-                <span class="home-name3">Joanna Smith</span>
-                <span class="home-location1">Briville</span>
+              <p class="home-caption16">
+
+              </p>
+            </div>
+            <div class="home-testimonial">
+              <div class="home-content07">
+                <span class="home-text29">Philosophy</span>
+                <p class="home-text30">
+                  “”-Zhangbo Xu
+                </p>
               </div>
-            </div>
-            <div class="home-quote4">
-              <p class="home-quote5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <div class="home-author4">
-                <span class="home-name4">Joanna Smith</span>
-                <span class="home-location2">Briville</span>
-              </div>
-            </div>
-            <div class="home-quote6">
-              <p class="home-quote7">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <div class="home-author5">
-                <span class="home-name5">Joanna Smith</span>
-                <span class="home-location3">Briville</span>
+              <div class="home-information">
+                <div class="home-author">
+                  <img
+                    alt="image"
+                    src="{% static 'index/public/xzb_sized.png' %}"
+                    class="home-icon21"
+                  />
+                  <span class="home-name">徐章博</span>
+                </div>
+                <img alt="image" src="../static/index/public/logo.png" class="home-from" />
               </div>
             </div>
           </div>
-          <div class="home-controls1">
-            <button class="home-previous1 button">
-              <svg viewBox="0 0 1024 1024" class="home-icon31">
-                <path
-                  d="M542.165 780.501l-225.835-225.835h494.336c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-494.336l225.835-225.835c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-298.667 298.667c-4.096 4.096-7.168 8.789-9.259 13.824-2.176 5.205-3.243 10.795-3.243 16.341 0 10.923 4.181 21.845 12.501 30.165l298.667 298.667c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"
-                ></path>
-              </svg>
-            </button>
-            <button class="home-next1 button">
-              <svg viewBox="0 0 1024 1024" class="home-icon33">
-                <path
-                  d="M481.835 243.499l225.835 225.835h-494.336c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667h494.336l-225.835 225.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l298.667-298.667c3.925-3.925 7.083-8.619 9.259-13.824 4.309-10.453 4.309-22.229 0-32.683-2.091-5.035-5.163-9.728-9.259-13.824l-298.667-298.667c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"
-                ></path>
-              </svg>
-            </button>
-            <button class="button home-button4">
-              <span>
-                <span>View all cases</span>
-                <br />
-              </span>
-            </button>
+          <div class="home-images">
+            <div class="home-square"></div>
+            <img
+              alt="image"
+              src="../static/index/public/xzb_sized.png"
+              class="home-image06"
+            />
           </div>
         </section>
-        <section class="home-faq">
-          <div class="home-header22">
-            <h2 class="home-heading13">
-              <span>Frequently asked&nbsp;</span>
-              <span class="home-text75">questions</span>
-              <span></span>
-            </h2>
-          </div>
-          <div class="home-content20">
-            <div class="home-column">
-              <div class="home-element04">
-                <h3 class="home-header23">
-                  Lorem ipsum dolor sit ametetur elit?
-                </h3>
-                <p class="home-content21">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div class="home-element05">
-                <h3 class="home-header24">
-                  Excepteur sint occaecat cupidatat non sunt in culpa qui
-                  officia deserunt mollit anim id est laborum?
-                </h3>
-                <p class="home-content22">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo inventore veritatis et quasi architecto
-                  beatae vitae dicta sunt explicabo.
-                </p>
-              </div>
-              <div class="home-element06">
-                <h3 class="home-header25">
-                  Tempor incididunt ut labore et dolore magna aliquat enim ad
-                  minim?
-                </h3>
-                <p class="home-content23">
-                  Quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                  ea commodo consequat. Duis aute irure dolor in reprehenderit
-                  in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                  in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </div>
-            </div>
-            <div class="home-column1">
-              <div class="home-element07">
-                <h3 class="home-header26">
-                  Tempor incididunt ut labore et dolore magna aliquat enim ad
-                  minim?
-                </h3>
-                <p class="home-content24">
-                  Quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                  ea commodo consequat. Duis aute irure dolor in reprehenderit
-                  in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                  in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </div>
-              <div class="home-element08">
-                <h3 class="home-header27">
-                  Lorem ipsum dolor sit ametetur elit?
-                </h3>
-                <p class="home-content25">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div class="home-element09">
-                <h3 class="home-header28">Incididunt ut labore et dolore?</h3>
-                <p class="home-content26">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+
+
+
         <div class="home-footer">
           <div class="home-content27">
             <div class="home-main">

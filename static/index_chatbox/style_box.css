@@ -12,13 +12,13 @@
 .messages {
   position: absolute;
   background: #F9FBFF;
-  opacity: 0.5;
+  opacity: 0.7;
   width: 30%;
   height: 75%;
   top: 2.5%;
   left: 5%;
   border-radius: 10px 0 0 10px;
-  box-shadow: -5px 5px 10px rgba(119, 119, 119, 0.5);
+  box-shadow: -5px 5px 10px rgba(119, 119, 119, 1);
 }
 
 /*chat messages */
