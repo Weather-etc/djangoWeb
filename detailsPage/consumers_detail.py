@@ -1,14 +1,13 @@
 import json
 from asgiref.sync import async_to_sync
 from channels.generic.websocket import WebsocketConsumer
-from .botModel.app.robot import Bot
 import datetime
 
 
-class ChatConsumer(WebsocketConsumer):
+class detailConsumer(WebsocketConsumer):
     def __init__(self):
         super().__init__()
-        self.bot = Bot()
+        self.cur_data = 0;
         self.room_name = None
         self.room_group_name = None
 
@@ -32,17 +31,23 @@ class ChatConsumer(WebsocketConsumer):
 
     def receive(self, text_data):
         text_data_json = json.loads(text_data)
-        message = text_data_json['message']
-        entity_dic, message, _ = self.bot.query(message)
-
-        entity = ""
-        for key, value in list(entity_dic):
-            entity = entity + key + ','
+        message = text_data_json['index']
+        message = self.bot.query(message)
         print('response: ' + message)
-        print('entity: ' + entity)
 
+        # 发送消息到频道组，频道组调用chat_message方法
+        async_to_sync(self.channel_layer.group_send)(
+            self.room_group_name,
+            {
+                'type': 'chat_message',
+                'message': message
+            }
+        )
+
+    def chat_message(self, event):
+        message = event['message']
+
+        # 通过websocket发送消息到客户端
         self.send(text_data=json.dumps({
-            'message': f'{message}',
-            'entity': entity
+            'message': f'{message}'
         }))
-

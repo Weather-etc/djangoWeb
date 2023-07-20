@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <link rel="stylesheet" href="{% static 'index/index.css' %}">
+    <link rel="stylesheet" href="{% static 'index/style.css' %}">
+
+  <head>
+    <title>Togthr template</title>
+    <meta property="og:title" content="Togthr template" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+      *{
+            padding: 0;
+            margin: 0;
+        }
+        .chat_commento{
+            width: 450px;
+            height: 650px;
+            margin: auto;
+            border-radius: 10px;
+            border: 2px solid #f4f5f7;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            visibility: hidden;
+        }
+        /* top */
+        .chat_top{
+            width: 100%;
+            height: 50px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding-left: 20px;
+            font-size: 20px;
+            line-height: 50px;
+            box-sizing: border-box;
+            font-weight: 550;
+            border-width: 0px;
+        }
+        /* middle */
+        /* 左边 */
+        .chat_middle{
+            width: 450px;
+            height: 455px;
+            position: relative;
+            box-sizing: border-box;
+            overflow: auto;
+            border-width: 0px;
+        }
+        .chat_left{
+            width: 100%;
+            height: 120px;
+            margin-top: 20px;
+        }
+        .chat_left_item_1{
+            width: 50px;
+            height: 50px;
+            background-color: #4459AB;
+            float: left;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            border-radius: 25px;
+        }
+        .chat_left_item_2{
+            width: 55%;
+            height: 100px;
+            float: left;
+            margin-top: 10px;
+        }
+        .chat_left_item_2 .chat_left_chat{
+            float: left;
+        }
+        .chat_left_item_2 .chat_left_content{
+            padding: 15px;
+            margin-top: 10px;
+            background-color: #f4f5f7;
+            color: black;
+            display: inline-block;
+            border-radius: 10px;
+            border-top-left-radius: 0px;
+        }
+        /* 右边 */
+        .chat_right{
+            width: 100%;
+            height: 120px;
+            margin-top: 20px;
+        }
+        .chat_right_item_1{
+            width: 50px;
+            height: 50px;
+            background-color: #4459AB;
+            float: right;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            border-radius: 25px;
+        }
+        .chat_right_item_2{
+            width: 55%;
+            height: 100px;
+            float: right;
+            margin-top: 10px;
+        }
+        .chat_right_time{
+            width: 100%;
+            text-align: right;
+        }
+        .chat_right_content{
+            float: right;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            border-top-right-radius: 0px;
+            background-color: #4F7cff;
+            color: white;
+        }
+        /* foot */
+        .chat_foot{
+            width: 450px;
+            height: 130px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            position: relative;
+        }
+        .chat_context{
+            width: 100%;
+            height: 100%;
+            font-size: 17px;
+            box-sizing: border-box;
+            outline: none;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-width: 0px;
+            padding: 16px;
+        }
+        .chat_commit{
+            width: 80px;
+            height: 30px;
+            color: white;
+            background-color: #4F7cff;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 5px;
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            margin-right: 10px;
+        }
+        .chat_context{
+            resize: none;
+        }
+        .chat_context::placeholder{
+            color: black;
+            font-weight: 500;
+        }
+        .line{
+            width: 100%;
+            border-top: 1px;
+            border-color: #f4f5f7;
+            border-style: solid;
+        }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/blaze-slider@latest/dist/blaze.css"
+    />
+    <link rel="stylesheet" href="../static/index/style.css" />
+  </head>
+  <body>
+    <div>
+      <script
+        type="text/javascript"
+        src="https://unpkg.com/dangerous-html/dist/default/lib.umd.js"
+      ></script>
+      <link href="../static/index/index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <section class="home-hero">
+          <video
+            src="{% static 'index/public/riceVideo.mp4' %}"
+            loop=""
+            muted=""
+            poster="{% static 'index/public/postImg.jpg' %}"
+            preload="auto"
+            autoplay=""
+            playsinline=""
+            class="home-video"
+          ></video>
+          <header data-thq="thq-navbar" class="home-navbar">
+            <img alt="image" src="{% static 'index/public/logo.png' %}" class="home-branding" style="height: 100px; width: 150px"/>
+            <div data-thq="thq-burger-menu" class="home-burger-menu">
+
+              <div class="home-hamburger" style="border-radius: 30px;position: fixed; bottom: 110px; right: 60px">
+                <img alt="image" src="../static/index/public/hamburger.svg" class="home-icon" />
+              </div>
+            </div>
+
+            <div data-thq="thq-mobile-menu" class="home-mobile-menu">
+              <div
+                data-thq="thq-mobile-menu-nav"
+                data-role="Nav"
+                class="home-nav"
+              >
+                <div class="home-container1">
+                  <div data-thq="thq-close-menu" class="home-menu-close">
+                    <svg viewBox="0 0 1024 1024" class="home-icon01">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <nav
+                  data-thq="thq-mobile-menu-nav-links"
+                  data-role="Nav"
+                  class="home-nav1"
+                >
+                </nav>
+                <div class="home-container2">
+                </div>
+              </div>
+
+                {% block msgBox %}
+                {% endblock %}
+
+            </div>
+
+          </header>
+
+          <div class="home-hero-content">
+            <div class="home-header-container">
+              <div class="home-header">
+                <h1 class="home-heading">
+                  <span>K-G robot of</span>
+                  <span class="home-text06">Agriculture</span>
+                  <br />
+                </h1>
+              </div>
+              <p class="home-caption">
+                  Agriculture is the most healthful, most useful and most noble employment of man.
+              </p>
+            </div>
+
+              <header data-thq="" class="">
+              </header>
+
+          </div>
+        </section>
+        <section class="home-note">
+          <h2 class="home-caption01">
+            The most comprehensive lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna.
+          </h2>
+        </section>
+        <section class="home-statistics">
+          <div class="home-content">
+            <div class="home-stat">
+              <h3 class="home-header01">$1.69M</h3>
+              <span class="home-caption02">Consectetur adipiscing</span>
+            </div>
+            <div class="home-stat1">
+              <h3 class="home-header02">Multiverse</h3>
+              <span class="home-caption03">Unde omnis iste</span>
+            </div>
+            <div class="home-stat2">
+              <h3 class="home-header03">500K</h3>
+              <span class="home-caption04">Accusantium doloremque</span>
+            </div>
+          </div>
+        </section>
+        <section class="home-slider">
+          <div class="home-header04">
+            <h2 class="home-heading01">
+              <span>The first all-in-one verse&nbsp;</span>
+              <span class="home-text12">o</span>
+              <span class="home-text13">ptimized for growth.</span>
+            </h2>
+          </div>
+          <div class="home-selector">
+            <p class="home-caption05">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="home-slide-titles">
+              <div class="slide-title"><span>Metaverse</span></div>
+              <div class="slide-title slide-title-active">
+                <span>Ecosystems</span>
+              </div>
+              <div class="slide-title"><span>Development</span></div>
+              <div class="slide-title"><span>Integration</span></div>
+            </div>
+          </div>
+        </section>
+        <section class="home-slides">
+          <div class="home-slider1 slider blaze-slider">
+            <div class="home-slider-container blaze-container">
+              <div class="home-slider-track-container blaze-track-container">
+                <div class="home-slider-track blaze-track">
+                  <div data-role="current-banner" class="banner">
+                    <img
+                      alt="image"
+                      src="../static/index/public/slider-ecosystems-400h.png"
+                      class="home-image01"
+                    />
+                    <div class="home-content01">
+                      <div class="home-header05">
+                        <h3 class="home-heading02">Metaverse</h3>
+                        <p class="home-caption06">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.
+                        </p>
+                      </div>
+                      <div class="home-more">
+                        <span class="home-caption07">Read More</span>
+                        <svg viewBox="0 0 1024 1024" class="home-icon09">
+                          <path
+                            d="M298.667 341.333h323.669l-353.835 353.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l353.835-353.835v323.669c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-426.667c0-5.803-1.152-11.307-3.243-16.341s-5.163-9.728-9.216-13.781c-0.043-0.043-0.043-0.043-0.085-0.085-3.925-3.925-8.619-7.083-13.781-9.216-5.035-2.091-10.539-3.243-16.341-3.243h-426.667c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-role="current-banner" class="banner">
+                    <img
+                      alt="image"
+                      src="../static/index/public/slider-ecosystems-400h.png"
+                      class="home-image02"
+                    />
+                    <div class="home-content02">
+                      <div class="home-header06">
+                        <h3 class="home-heading03">Ecosystems</h3>
+                        <p class="home-caption08">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.
+                        </p>
+                      </div>
+                      <div class="home-more1">
+                        <span class="home-caption09">Read More</span>
+                        <svg viewBox="0 0 1024 1024" class="home-icon11">
+                          <path
+                            d="M298.667 341.333h323.669l-353.835 353.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l353.835-353.835v323.669c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-426.667c0-5.803-1.152-11.307-3.243-16.341s-5.163-9.728-9.216-13.781c-0.043-0.043-0.043-0.043-0.085-0.085-3.925-3.925-8.619-7.083-13.781-9.216-5.035-2.091-10.539-3.243-16.341-3.243h-426.667c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-role="current-banner" class="banner">
+                    <img
+                      alt="image"
+                      src="../static/index/public/slider-ecosystems-400h.png"
+                      class="home-image03"
+                    />
+                    <div class="home-content03">
+                      <div class="home-header07">
+                        <h3 class="home-heading04">Development</h3>
+                        <p class="home-caption10">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.
+                        </p>
+                      </div>
+                      <div class="home-more2">
+                        <span class="home-caption11">Read More</span>
+                        <svg viewBox="0 0 1024 1024" class="home-icon13">
+                          <path
+                            d="M298.667 341.333h323.669l-353.835 353.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l353.835-353.835v323.669c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-426.667c0-5.803-1.152-11.307-3.243-16.341s-5.163-9.728-9.216-13.781c-0.043-0.043-0.043-0.043-0.085-0.085-3.925-3.925-8.619-7.083-13.781-9.216-5.035-2.091-10.539-3.243-16.341-3.243h-426.667c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-role="current-banner" class="banner">
+                    <img
+                      alt="image"
+                      src="../static/index/public/slider-ecosystems-400h.png"
+                      class="home-image04"
+                    />
+                    <div class="home-content04">
+                      <div class="home-header08">
+                        <h3 class="home-heading05">Integration</h3>
+                        <p class="home-caption12">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.
+                        </p>
+                      </div>
+                      <div class="home-more3">
+                        <span class="home-caption13">Read More</span>
+                        <svg viewBox="0 0 1024 1024" class="home-icon15">
+                          <path
+                            d="M298.667 341.333h323.669l-353.835 353.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l353.835-353.835v323.669c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-426.667c0-5.803-1.152-11.307-3.243-16.341s-5.163-9.728-9.216-13.781c-0.043-0.043-0.043-0.043-0.085-0.085-3.925-3.925-8.619-7.083-13.781-9.216-5.035-2.091-10.539-3.243-16.341-3.243h-426.667c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="home-controls">
+                <button
+                  data-role="previous-banner-button"
+                  class="home-previous blaze-prev button"
+                >
+                  <svg viewBox="0 0 1024 1024" class="home-icon17">
+                    <path
+                      d="M542.165 780.501l-225.835-225.835h494.336c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-494.336l225.835-225.835c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-298.667 298.667c-4.096 4.096-7.168 8.789-9.259 13.824-2.176 5.205-3.243 10.795-3.243 16.341 0 10.923 4.181 21.845 12.501 30.165l298.667 298.667c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"
+                    ></path>
+                  </svg>
+                </button>
+                <button
+                  data-role="next-banner-button"
+                  class="home-next blaze-next button"
+                >
+                  <svg viewBox="0 0 1024 1024" class="home-icon19">
+                    <path
+                      d="M481.835 243.499l225.835 225.835h-494.336c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667h494.336l-225.835 225.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l298.667-298.667c3.925-3.925 7.083-8.619 9.259-13.824 4.309-10.453 4.309-22.229 0-32.683-2.091-5.035-5.163-9.728-9.259-13.824l-298.667-298.667c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <dangerous-html
+              html="<script>
+const el = document.querySelector('.blaze-slider')
+
+new BlazeSlider(el, {
+  all: {
+    slidesToShow: 3,
+    slideGap: '80px',
+    loop: true,
+    enableAutoplay: true,
+  },
+})
+</script>"
+            ></dangerous-html>
+          </div>
+        </section>
+        <section class="home-get-started">
+          <div class="home-header-container1">
+            <div class="home-header09">
+              <h2 class="home-heading06">
+                Companies will dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore veniam and more
+                opportunities.
+              </h2>
+              <p class="home-caption14">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+            <div class="home-button1">
+              <button class="button"><span>Get started today</span></button>
+            </div>
+          </div>
+          <img
+            alt="image"
+            src="../static/index/public/getstarted-800w.png"
+            class="home-image05"
+          />
+        </section>
+        <section class="home-objectives">
+          <div class="home-content05">
+            <span class="home-text19">Objectives</span>
+            <div class="home-objectives-list">
+              <div class="objective">
+                <h3 class="home-text20">Growth</h3>
+                <p class="home-text21">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="objective home-objective1">
+                <h3 class="home-text22">Develop</h3>
+                <p class="home-text23">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="objective home-objective2">
+                <h3 class="home-text24">Optimize</h3>
+                <p class="home-text25">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="home-growth">
+          <div class="home-content06">
+            <div class="home-header10">
+              <div class="home-header11">
+                <h2 class="home-heading07">
+                  <span>唐文涛</span>
+                  <span class="home-text27">CEO</span>
+                  <br />
+                </h2>
+              </div>
+              <p class="home-caption15">
+                迁移学习、计算机视觉、NLP、强化学习殿堂级人物。本组最有希望成为ACM Turing Award得主的人。领衔本项目人工智能部分研发工作。
+              </p>
+              <p class="home-caption16">
+                「新しい未来を作ると目指しています」
+              </p>
+            </div>
+            <div class="home-testimonial">
+              <div class="home-content07">
+                <span class="home-text29">Philosophy</span>
+                <p class="home-text30">
+                  “Experience is the philosophy of life.”-Wentao Tang
+                </p>
+              </div>
+              <div class="home-information">
+                <div class="home-author">
+                  <img
+                    alt="image"
+                    src="{% static 'index/public/twt_sized.png' %}"
+                    class="home-icon21"
+                  />
+                  <span class="home-name">唐文涛</span>
+                </div>
+                <img alt="image" src="../static/index/public/logo.png" class="home-from" />
+              </div>
+            </div>
+          </div>
+          <div class="home-images">
+            <div class="home-square"></div>
+            <img
+              alt="image"
+              src="../static/index/public/twt_sized.png"
+              class="home-image06"
+            />
+          </div>
+        </section>
+        <section class="home-experience">
+          <div class="home-images1">
+            <div class="home-square1"></div>
+            <img
+              alt="image"
+              src="../static/index/public/lyj_sized.png"
+              class="home-image07"
+            />
+          </div>
+          <div class="home-content08">
+            <div class="home-header10">
+              <div class="home-header-container2">
+                <div class="home-header13">
+                  <h2 class="home-heading08">
+                    <span>李纡君</span>
+                    <span class="home-text32">CTO</span>
+                  </h2>
+                </div>
+                <p class="home-caption17" style="height: 355px">
+                    当神醒来时，整个互联网都为之颤抖。本项目组最接近 Nobel Prize 之人。远赴美国只为推动世界发展。领衔本项目前端设计。
+                </p>
+              </div>
+               <p class="home-caption16">
+                   —— "刚醒。怎么说，草。"
+              </p>
+
+            </div>
+            <div class="home-testimonial1">
+              <div class="home-content09">
+                <span class="home-text37">Philosophy</span>
+                <p class="home-text38">
+                  "Flee away from the internet industry because I am already here."-Yujun Li
+                </p>
+              </div>
+              <div class="home-information1">
+                <div class="home-author1">
+                  <img
+                    alt="image"
+                    src="{% static 'index/public/lyj_sized.png' %}"
+                    class="home-icon30"
+                  />
+                  <span class="home-name1">李纡君</span>
+                </div>
+                <img
+                  alt="image"
+                  src="../static/index/public/logo.png"
+                  class="home-from1"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="home-create">
+          <div class="home-content10">
+            <div class="home-header14">
+              <h2 class="home-heading09">
+                <span>Create your own</span>
+                <span class="home-text40">environment</span>
+                <span>now!</span>
+                <br />
+              </h2>
+            </div>
+            <button class="home-button3 button">
+              <span>
+                <span>Get started today</span>
+                <br />
+              </span>
+            </button>
+          </div>
+        </section>
+        <section class="home-comparision">
+          <div class="home-header-container3">
+            <div class="home-header15">
+              <h2 class="home-heading10">
+                <span>Environment c</span>
+                <span class="home-text47">omparision</span>
+                <br />
+              </h2>
+            </div>
+            <p class="home-caption18">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
+              eiusmod.
+            </p>
+          </div>
+          <div class="home-table">
+            <div class="home-row">
+              <div class="home-headers">
+                <span class="home-text49">Placeholder</span>
+              </div>
+              <div class="home-plans">
+                <div class="home-row01">
+                  <span class="home-text50">TOGHTR</span>
+                  <span class="home-text51">AGENCY</span>
+                  <span class="home-text52">FRELLANCE</span>
+                </div>
+              </div>
+            </div>
+            <div class="home-row02">
+              <div class="home-headers1">
+                <span class="home-text53">
+                  Duis aute irure dolor in reprehenderit
+                </span>
+              </div>
+              <div class="home-plans1">
+                <div class="home-row03">
+                  <div class="value">
+                    <div class="check-check">
+                      <svg viewBox="0 0 1024 1024" class="check-icon">
+                        <path
+                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <div class="check-check">
+                      <svg viewBox="0 0 1024 1024" class="check-icon">
+                        <path
+                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <div class="check-check">
+                      <svg viewBox="0 0 1024 1024" class="check-icon">
+                        <path
+                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-row04">
+              <div class="home-headers2">
+                <span class="home-text54">Lorem ipsum dolor sit amet</span>
+              </div>
+              <div class="home-plans2">
+                <div class="home-row05">
+                  <div class="value">
+                    <div class="check-check">
+                      <svg viewBox="0 0 1024 1024" class="check-icon">
+                        <path
+                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <div class="check-check">
+                      <svg viewBox="0 0 1024 1024" class="check-icon">
+                        <path
+                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="value"><div class="line-line"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="home-row06">
+              <div class="home-headers3">
+                <span class="home-text55">
+                  Duis aute irure dolor in reprehenderit
+                </span>
+              </div>
+              <div class="home-plans3">
+                <div class="home-row07">
+                  <div class="value">
+                    <span class="home-text56">Custom</span>
+                  </div>
+                  <div class="value"><div class="line-line"></div></div>
+                  <div class="value"><div class="line-line"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="home-row08">
+              <div class="home-headers4">
+                <span class="home-text57">
+                  Duis aute irure dolor in reprehenderit
+                </span>
+              </div>
+              <div class="home-plans4">
+                <div class="home-row09">
+                  <div class="value">
+                    <span class="home-text58">Unlimited</span>
+                  </div>
+                  <div class="value">
+                    <span class="home-text59">Limited</span>
+                  </div>
+                  <div class="value"><div class="line-line"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="home-row10">
+              <div class="home-headers5">
+                <span class="home-text60">Lorem ipsum dolor sit amet</span>
+              </div>
+              <div class="home-plans5">
+                <div class="home-row11">
+                  <div class="value">
+                    <div class="check-check">
+                      <svg viewBox="0 0 1024 1024" class="check-icon">
+                        <path
+                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="value"><div class="line-line"></div></div>
+                  <div class="value">
+                    <span class="home-text61">Limited</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-row12">
+              <div class="home-headers6">
+                <span class="home-text62">Lorem ipsum dolor sit amet</span>
+              </div>
+              <div class="home-plans6">
+                <div class="home-row13">
+                  <div class="value">
+                    <div class="check-check">
+                      <svg viewBox="0 0 1024 1024" class="check-icon">
+                        <path
+                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <div class="check-check">
+                      <svg viewBox="0 0 1024 1024" class="check-icon">
+                        <path
+                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <div class="check-check">
+                      <svg viewBox="0 0 1024 1024" class="check-icon">
+                        <path
+                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-row14">
+              <div class="home-headers7">
+                <span class="home-text63">Lorem ipsum dolor sit amet</span>
+              </div>
+              <div class="home-plans7">
+                <div class="home-row15">
+                  <div class="value">
+                    <div class="check-check">
+                      <svg viewBox="0 0 1024 1024" class="check-icon">
+                        <path
+                          d="M823.168 225.835l-439.168 439.168-183.168-183.168c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331l213.333 213.333c16.683 16.683 43.691 16.683 60.331 0l469.333-469.333c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="value">
+                    <span class="home-text64">Limited</span>
+                  </div>
+                  <div class="value"><div class="line-line"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="home-data">
+          <div class="home-header-container4">
+            <div class="home-header16">
+              <div class="home-row16">
+                <h2 class="home-heading11">
+                  <span>Understand your data to&nbsp;manage all in one</span>
+                  <span class="home-text66">platform</span>
+                  <br />
+                </h2>
+              </div>
+            </div>
+            <p class="home-caption19">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="home-content11">
+            <div class="home-image08">
+              <img
+                alt="image"
+                src="../static/index/public/data-1400w.png"
+                class="home-image09"
+              />
+            </div>
+            <div class="home-accordion">
+              <div data-role="accordion-container" class="accordion">
+                <div>
+                  <h3 class="home-header17">Management</h3>
+                  <p data-role="accordion-content" class="accordion-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua.
+                  </p>
+                </div>
+                <div
+                  class="icon-container-icon-container icon-container-root-class-name"
+                >
+                  <svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-closed"
+                    class="icon-container-icon"
+                  >
+                    <path
+                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path></svg
+                  ><svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-open"
+                    class="icon-container-icon2"
+                  >
+                    <path
+                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div data-role="accordion-container" class="accordion">
+                <div>
+                  <h3 class="home-header18">Integrations</h3>
+                  <p data-role="accordion-content" class="accordion-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua.
+                  </p>
+                </div>
+                <div
+                  class="icon-container-icon-container icon-container-root-class-name1"
+                >
+                  <svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-closed"
+                    class="icon-container-icon"
+                  >
+                    <path
+                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path></svg
+                  ><svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-open"
+                    class="icon-container-icon2"
+                  >
+                    <path
+                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div data-role="accordion-container" class="accordion">
+                <div>
+                  <h3 class="home-header19">Customer Solutions</h3>
+                  <p data-role="accordion-content" class="accordion-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua.
+                  </p>
+                </div>
+                <div
+                  class="icon-container-icon-container icon-container-root-class-name2"
+                >
+                  <svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-closed"
+                    class="icon-container-icon"
+                  >
+                    <path
+                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path></svg
+                  ><svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-open"
+                    class="icon-container-icon2"
+                  >
+                    <path
+                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div data-role="accordion-container" class="accordion">
+                <div>
+                  <h3 class="home-header20">Recruiting</h3>
+                  <p data-role="accordion-content" class="accordion-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua.
+                  </p>
+                </div>
+                <div
+                  class="icon-container-icon-container icon-container-root-class-name3"
+                >
+                  <svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-closed"
+                    class="icon-container-icon"
+                  >
+                    <path
+                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path></svg
+                  ><svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-open"
+                    class="icon-container-icon2"
+                  >
+                    <path
+                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <dangerous-html
+                  html="<script>
+ /*
+  Accordion - Code Embed
+  */
+  const accordionContainers = document.querySelectorAll('[data-role='accordion-container']'); // All accordion containers
+  const accordionContents = document.querySelectorAll('[data-role='accordion-content']'); // All accordion content
+  const accordionIconsClosed = document.querySelectorAll('[data-role='accordion-icon-closed']'); // All accordion closed icons
+  const accordionIconsOpen = document.querySelectorAll('[data-role='accordion-icon-open']'); // All accordion open icons
+
+  accordionContents.forEach((accordionContent) => {
+      accordionContent.style.display = 'none'; //Hides all accordion contents
+  });
+
+  accordionIconsClosed.forEach((icon) => {
+    icon.style.display = 'flex'
+  })
+
+  accordionIconsOpen.forEach((icon) => {
+    icon.style.display = 'none'
+  })
+
+  accordionContainers.forEach((accordionContainer, index) => {
+      accordionContainer.addEventListener('click', () => {
+          if (accordionContents[index].style.display === 'flex') {
+              // If the accordion is already open, close it
+              accordionContents[index].style.display = 'none';
+              accordionIconsClosed[index].style.display = 'flex';
+              accordionIconsOpen[index].style.display = 'none'
+          } else {
+              // If the accordion is closed, open it
+              accordionContents.forEach((accordionContent) => {
+                  accordionContent.style.display = 'none'; //Hides all accordion contents
+              });
+
+              accordionIconsClosed.forEach((accordionIcon) => {
+                  accordionIcon.style.display = 'flex'; // Resets all icon transforms to 0deg (default)
+              });
+
+              accordionIconsOpen.forEach((accordionIcon) => {
+                accordionIcon.style.display = 'none';
+              })
+              
+              accordionContents[index].style.display = 'flex'; // Shows accordion content
+              accordionIconsClosed[index].style.display = 'none'; // Rotates accordion icon 180deg
+              accordionIconsOpen[index].style.display = 'flex';
+          }
+      });
+  });
+</script>
+"
+                ></dangerous-html>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="home-customer">
+          <div class="home-header21">
+            <h2 class="home-heading12">
+              <span>Customer validation is an essential phase of the</span>
+              <span class="home-text69">product development process</span>
+              <br />
+            </h2>
+          </div>
+          <div class="home-quotes">
+            <div class="home-quote">
+              <p class="home-quote1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <div class="home-author2">
+                <span class="home-name2">Joanna Smith</span>
+                <span class="home-location">Briville</span>
+              </div>
+            </div>
+            <div class="home-quote2">
+              <p class="home-quote3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <div class="home-author3">
+                <span class="home-name3">Joanna Smith</span>
+                <span class="home-location1">Briville</span>
+              </div>
+            </div>
+            <div class="home-quote4">
+              <p class="home-quote5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <div class="home-author4">
+                <span class="home-name4">Joanna Smith</span>
+                <span class="home-location2">Briville</span>
+              </div>
+            </div>
+            <div class="home-quote6">
+              <p class="home-quote7">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <div class="home-author5">
+                <span class="home-name5">Joanna Smith</span>
+                <span class="home-location3">Briville</span>
+              </div>
+            </div>
+          </div>
+          <div class="home-controls1">
+            <button class="home-previous1 button">
+              <svg viewBox="0 0 1024 1024" class="home-icon31">
+                <path
+                  d="M542.165 780.501l-225.835-225.835h494.336c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-494.336l225.835-225.835c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-298.667 298.667c-4.096 4.096-7.168 8.789-9.259 13.824-2.176 5.205-3.243 10.795-3.243 16.341 0 10.923 4.181 21.845 12.501 30.165l298.667 298.667c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"
+                ></path>
+              </svg>
+            </button>
+            <button class="home-next1 button">
+              <svg viewBox="0 0 1024 1024" class="home-icon33">
+                <path
+                  d="M481.835 243.499l225.835 225.835h-494.336c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667h494.336l-225.835 225.835c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l298.667-298.667c3.925-3.925 7.083-8.619 9.259-13.824 4.309-10.453 4.309-22.229 0-32.683-2.091-5.035-5.163-9.728-9.259-13.824l-298.667-298.667c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"
+                ></path>
+              </svg>
+            </button>
+            <button class="button home-button4">
+              <span>
+                <span>View all cases</span>
+                <br />
+              </span>
+            </button>
+          </div>
+        </section>
+        <section class="home-faq">
+          <div class="home-header22">
+            <h2 class="home-heading13">
+              <span>Frequently asked&nbsp;</span>
+              <span class="home-text75">questions</span>
+              <span></span>
+            </h2>
+          </div>
+          <div class="home-content20">
+            <div class="home-column">
+              <div class="home-element04">
+                <h3 class="home-header23">
+                  Lorem ipsum dolor sit ametetur elit?
+                </h3>
+                <p class="home-content21">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="home-element05">
+                <h3 class="home-header24">
+                  Excepteur sint occaecat cupidatat non sunt in culpa qui
+                  officia deserunt mollit anim id est laborum?
+                </h3>
+                <p class="home-content22">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem aperiam, eaque
+                  ipsa quae ab illo inventore veritatis et quasi architecto
+                  beatae vitae dicta sunt explicabo.
+                </p>
+              </div>
+              <div class="home-element06">
+                <h3 class="home-header25">
+                  Tempor incididunt ut labore et dolore magna aliquat enim ad
+                  minim?
+                </h3>
+                <p class="home-content23">
+                  Quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea commodo consequat. Duis aute irure dolor in reprehenderit
+                  in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                  in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+            </div>
+            <div class="home-column1">
+              <div class="home-element07">
+                <h3 class="home-header26">
+                  Tempor incididunt ut labore et dolore magna aliquat enim ad
+                  minim?
+                </h3>
+                <p class="home-content24">
+                  Quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                  ea commodo consequat. Duis aute irure dolor in reprehenderit
+                  in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                  in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </div>
+              <div class="home-element08">
+                <h3 class="home-header27">
+                  Lorem ipsum dolor sit ametetur elit?
+                </h3>
+                <p class="home-content25">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="home-element09">
+                <h3 class="home-header28">Incididunt ut labore et dolore?</h3>
+                <p class="home-content26">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="home-footer">
+          <div class="home-content27">
+            <div class="home-main">
+              <div class="home-branding1">
+                <img alt="image" src="{% static 'index/public/logo.png' %}" class="home-image10" />
+                <span class="home-text77">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </span>
+              </div>
+              <div class="home-links">
+                <div class="home-column2">
+                  <span class="home-header29">Company</span>
+                  <div class="home-list">
+                    <a href="index_base.html" class="home-navlink">About</a>
+                    <a href="index_base.html" class="home-navlink01">Services</a>
+                    <a href="index_base.html" class="home-navlink02">How</a>
+                    <a href="index_base.html" class="home-navlink03">
+                      <span class="home-text78">Why</span>
+                      <br />
+                    </a>
+                  </div>
+                </div>
+                <div class="home-column3">
+                  <span class="home-header30">Extern</span>
+                  <div class="home-list1">
+                    <a href="index_base.html" class="home-navlink04">News</a>
+                    <a href="index_base.html" class="home-navlink05">Articles</a>
+                    <a href="index_base.html" class="home-navlink06">Blog</a>
+                    <a href="index_base.html" class="home-navlink07">Privacy</a>
+                    <a href="index_base.html" class="home-navlink08">Terms</a>
+                    <a href="index_base.html" class="home-navlink09">Legal</a>
+                    <a href="index_base.html" class="home-navlink10">Press</a>
+                  </div>
+                </div>
+                <div class="home-column4">
+                  <span class="home-header31">Social</span>
+                  <div class="home-list2">
+                    <a href="index_base.html" class="home-navlink11">LinkedIn</a>
+                    <a href="index_base.html" class="home-navlink12">Twitter</a>
+                    <a href="index_base.html" class="home-navlink13">Instagram</a>
+                    <a href="index_base.html" class="home-navlink14">Facebook</a>
+                    <a href="index_base.html" class="home-navlink15">TikTok</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home-bottom">
+              <span class="home-text80">
+                © 2022 togthr - All rights reserved
+              </span>
+              <button data-role="scroll-top" class="home-button5 button">
+                <img alt="image" src="../static/index/public/arrow.svg" class="home-image11" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <dangerous-html
+            html="<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // get the element with the 'scroll-top' data-role
+  const scrollTopBtn = document.querySelector('[data-role='scroll-top']');
+
+  // when the element is clicked
+  scrollTopBtn.addEventListener('click', function() {
+    // smoothly scroll to the top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+</script>
+"
+          ></dangerous-html>
+        </div>
+      </div>
+    </div>
+    <script
+      data-section-id="navbar"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+    <script src="https://unpkg.com/blaze-slider@latest/dist/blaze-slider.min.js"></script>
+
+  </body>
+</html>

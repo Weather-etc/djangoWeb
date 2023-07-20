@@ -24,7 +24,8 @@ class Bot:
         # 创建对话机器人对象
         test_bot = ArgiBot(self.graph)
         # 使用ArgiBot.query进行问答
-        return test_bot.query(sentence)
+        res = test_bot.query(sentence)
+        return res['entities'], res['content'], res['agent']
 
 
 if __name__ == '__main__':

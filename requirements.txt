@@ -7,3 +7,7 @@ channels==4.0.0
 django-sesame==3.1
 daphne==4.0.0
 mysqlclient==2.2.0
+pymysql==1.1.0
+torch==2.0.1
+text2vec==1.2.2
+zhipuai==1.0.7

@@ -20,9 +20,8 @@ from django.urls import path
 from django.conf.urls import include
 from detailsPage.views import show_detail
 
-print('urls called')
 urlpatterns = [
     path("admin/", admin.site.urls),
     re_path(r"", include('chatBot.urls')),
-    path("detail/", show_detail)
+    re_path(r"detail/", show_detail)
 ]

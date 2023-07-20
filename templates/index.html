@@ -35,7 +35,6 @@
       class="home-textinput input"
       id="text_input"
     />
-
     <div class="home-search"
          id="home-search"
         onclick="sendMsg();">
@@ -74,16 +73,35 @@
         let send_message = document.getElementById("msg_container");
         // get response from robot
 
-        let msg_parse = JSON.parse(msg.data).message
+        let msg_parsed = JSON.parse(msg.data);
+        console.log(msg_parsed)
+        let content = msg_parsed.message;
+        let entity = msg_parsed.entity;
+
         let date = new Date();
         let hour = date.getHours();
         let mm = date.getMinutes();
         let time = hour + ':' + mm;
         let res_html = '<div class="chat_left_item_1 clearfix">robot</div>' +
-            '<div class="chat_left_item_2">' +
-            '<div class="chat_left_time clearfix">' + time + '</div>' +
-            '<div class="chat_left_content clearfix">' + msg_parse + '</div>' +
-            '</div>';
+                '<div class="chat_left_item_2">' +
+                '<div class="chat_left_time clearfix">' + time + '</div>' +
+                '<div class="chat_left_content clearfix">' + content;
+        console.log(entity);
+        if (entity == "none") {
+            res_html = res_html +
+                '</div>' +
+                '</div>';
+        }
+        else {
+            console.log("fuckkkkk");
+            res_html = res_html +
+                '<div style="height: 50px; width: 100%; background-color: #32A94C;">' +
+                '<hr />' +
+                `<a href="http://127.0.0.1:8000/detail/?entity=${entity}" style="line-height: 50px"> 点击进入详情页</a>` +
+                '</div>' +
+                '</div>' +
+                '</div>';
+        }
         let res_entity = document.createElement("div");
         res_entity.setAttribute("class", "chat_left");
         res_entity.innerHTML = res_html;
@@ -102,7 +120,6 @@
             showMsg(msg);
             msg_box.value = "";
         }
-
         const ws_protocol = (window.location.protocol == "https:") ? 'wss://': 'ws://';
         const chat_socket = new WebSocket(
             ws_protocol + window.location.host + '/ws/chat/'
