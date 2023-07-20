@@ -1,72 +1,69 @@
-{% extends "index_base.html" %} {% block msgBox %}
+{% extends 'index_base.html' %}{% block msgBox %}
+  {% load static %}
 
-
-    {% load static %}
+<html lang="en" >
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-
+  <meta charset="UTF-8">
+  <title>CodePen - Daily UI #013 - Direct Messaging</title>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'><link rel="stylesheet" href="{% static 'index_chatbox/style_box.css' %}">
+    <link rel="stylesheet" href="{% static 'index_chatbox/style_box.css' %}">
 </head>
+<!-- partial:index.partial.html -->
+<!--It's just a concept, a chat UI design for direct messaging!
+Enjoy! :) Don't forget to click the heart if you like it! -->
 
-<div id="background"
-        data-width="100%"
-       style="overflow: scroll;
-       top: 100px;
-       left: 50%;
-       margin-left: -600px;
-       position: absolute;
-       width: 1200px;
-       height: 600px;
-       border-radius: 20px;
-       background-color: rgb(255, 255, 255, 0.6);
-        overflow: hidden">
-<div id="msg_container"
-           style="width: 100%;
-           height: 500px;
-           overflow: scroll;
-            overflow-x: hidden;" >
+<div class="container" >
+  <div class="chatbox">
+    <div class="top-bar">
+      <div class="avatar"><p>V</p></div>
+      <div class="name">Voldemort</div>
+      <div class="icons">
+        <i class="fas fa-phone"></i>
+        <i class="fas fa-video"></i>
+      </div>
+      <div class="menu">
+        <div class="dots"></div>
+      </div>
+    </div>
+    <div class="middle" id="msg_container" style="overflow: scroll; overflow-x: hidden">
         <!-- insert here -->
-</div>
 
-<div class="home-center" style="width: 1024px; height: 58px;">
-    <div class="home-border" style="width: 1024px">
-    <div class="home-filter">
-    <input
-      type="text"
-      placeholder="Destination"
-      class="home-textinput input"
-      id="text_input"
-    />
-    <div class="home-search"
-         id="home-search"
-        onclick="sendMsg();">
-      <img
-        alt="image"
-        src={% static 'chatBot/public/Icons/search.svg' %}
-        class="home-icon"
-      />
     </div>
+    <div class="bottom-bar">
+      <div class="chat">
+        <input type="text" id="text_input" placeholder="Type a message..." />
+        <button type="submit" style="position: absolute; right: 10px; top: 18px" onclick="sendMsg()"><i class="fas fa-paper-plane"></i></button>
+      </div>
     </div>
-    </div>
-</div>
+  </div>
+
+
+  <div class="messages">
+  <div class="profile">
+    <div class="avatar"><p>H</p></div>
+    <div class="name2">Harry<p class="email">Harry@potter.com</p></div>
+  </div>
+
+  </div>
 
 </div>
 
+<footer>
+  <p>made by <a href="https://codepen.io/juliepark"> julie</a> ♡
+</footer>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
 
-    <script type="text/javascript">
+</html>
+
+  <script type="text/javascript">
     function showMsg(msg) {
         let send_message = document.getElementById("msg_container");
-        let date = new Date();
-        let hour = date.getHours();
-        let mm = date.getMinutes();
-        let time = hour + ':' + mm;
-        let ans = '<div class="chat_right_item_1 clearfix">文涛</div>' +
-            '<div class="chat_right_item_2">' +
-            '<div class="chat_right_time clearfix">' + time + '</div>' +
-            '<div class="chat_right_content clearfix">' + msg + '</div>'
-            + '</div>';
+        let ans = `<div class="bubble">${msg}</div> `;
+
         let oLi = document.createElement("div");
-        oLi.setAttribute("class", "chat_right");
+        oLi.setAttribute("class", "outgoing");
+        oLi.setAttribute("style", "margin-right=15px")
         oLi.innerHTML = ans;
         send_message.append(oLi);
     }
@@ -80,30 +77,20 @@
         let content = msg_parsed.message;
         let entity = msg_parsed.entity;
 
-        let date = new Date();
-        let hour = date.getHours();
-        let mm = date.getMinutes();
-        let time = hour + ':' + mm;
-        let res_html = '<div class="chat_left_item_1 clearfix">robot</div>' +
-                '<div class="chat_left_item_2">' +
-                '<div class="chat_left_time clearfix">' + time + '</div>' +
-                '<div class="chat_left_content clearfix">' + content;
+        let res_html = `<div class="bubble" style="font-size: 20px">${content}`;
+
         if (entity != "none"){
             let entity_list = entity.split(",");
             console.log(entity_list)
             for (let i = 0; i < entity_list.length - 1; i = i + 1) {
-                res_html = res_html +
-                    '<div style="height: 40px; width: 100%; background-color: #32A94C;">' +
-                    `<a href="http://127.0.0.1:8000/detail/?entity=${entity_list[i]}" style="line-height: 40px" target="_blank"> 点击进入${entity_list[i]}详情页</a>` +
-                    '</div>' +
-                    '<div style="height: 5px"></div>'
-
+                res_html = res_html + '<hr />' +
+                    `<a href="http://127.0.0.1:8000/detail/?entity=${entity_list[i]}" style="line-height: 40px" target="_blank"> 点击进入${entity_list[i]}详情页</a>`;
             }
         }
-        res_html = res_html + "</div></div>";
+        res_html = res_html + '</div>';
 
         let res_entity = document.createElement("div");
-        res_entity.setAttribute("class", "chat_left");
+        res_entity.setAttribute("class", "incoming");
         res_entity.innerHTML = res_html;
         send_message.append(res_entity);
 
@@ -128,5 +115,6 @@
         chat_socket.onmessage = showMsg_robot;
         // chat_socket.onclose = function (){};
     </script>
+
 
 {% endblock %}
