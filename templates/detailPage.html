@@ -49,7 +49,8 @@
         <header data-role="Header" class="header-header">
           <img
             alt="logo"
-            src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+            src="{% static 'detaiPage/components/logo_black.png' %}"
+            style="height: 80px;"
             class="header-image"
           />
           <div class="header-nav">
@@ -71,7 +72,8 @@
               <div class="header-container">
                 <img
                   alt="image"
-                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  src="{% static 'detailPage/components/logo_black.png' %}"
+                  style="height: 80px"
                   class="header-image1"
                 />
                 <div
@@ -110,11 +112,10 @@
         </header>
         <div class="home-hero">
           <div class="home-container1">
-            <h1 class="home-text" id="head_context">水稻</h1>
+            <h1 class="home-text" id="head_content"></h1>
             <span class="home-text1" id="entity_intro">
-              <span>
-                稻（Oryza sativa
-                L.），通称水稻，是禾本科一年生水生草本（已有多年生稻品种）。秆直立，高0.5-1.5米，随品种而异。叶鞘无毛、松弛；叶舌披针形；叶片线状披针形，宽约1厘米，无毛，粗糙。圆锥花序大型疏展，棱粗糙；小穗含1成熟花；颖极小，仅在小穗柄先端留下半月形的痕迹，锥刺状；两侧孕性花外稃质厚，具5脉，中脉成脊，表面有方格状小乳状突起，厚纸质，遍布细毛端毛较密，有芒或无芒；内稃与外稃同质，具3脉，先端尖而无喙；雄蕊花药长2-3毫米。颖果长约5毫米，宽约2毫米；胚比约为颖果长的1/4。
+              <span id="entity_describe">
+                  {{ des00|safe }}
               </span>
               <br />
               <br />
@@ -129,11 +130,11 @@
         <div class="banner2-banner">
           <h1 class="banner2-text"><span>QA</span></h1>
           <span class="banner2-text1" id="banner_text">
-            <span>发现水稻相关的问题......</span>
+            <span id="banner_text_content"></span>
           </span>
         </div>
         <div class="home-testimonial">
-          <div class="container1-container">
+          <div class="container1-container" id="container1-container">
             <div class="container1-container1">
 
 
@@ -169,11 +170,12 @@
         <footer class="home-footer">
           <img
             alt="logo"
-            src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+            src="{% static 'detaiPage/components/logo_black.png' %}"
+            style="height: 80px"
             class="home-image1"
           />
           <span class="home-text5">
-            © 2021 teleportHQ, All Rights Reserved.
+            © 2023 划水对不队, All Rights Reserved.
           </span>
           <div class="home-icon-group">
             <svg viewBox="0 0 950.8571428571428 1024" class="home-icon">
@@ -196,32 +198,55 @@
   </body>
 </html>
 
-<!-- show describes -->
+<!-- dynamic contents -->
 <script type="text/javascript">
-    let head = document.getElementById("head_context");
-    let intro = document.getElementById("entity_intro");
-    let banner = document.getElementById("banner_text");
-    let faqs = document.getElementById("faqs");
+    let entity_name = [{{ name00|safe }}];
+    let entity_des = [{{ des00|safe }}];
+    let entity_faq = [{{ faqs00|safe }}];
 
-    let basicInfo = [{{ basicInfo|safe }}];
-    // do something
+
+    console.log(entity_name)
+    let qa_des = document.getElementById("banner_text_content");
+    qa_des.innerText = `发现${entity_name[0]}的相关问题......`;
+    let des = document.getElementById("entity_describe");
+    des.innerText = entity_des[0];
+    let head = document.getElementById("head_content");
+    head.innerText = entity_name[0];
+
 </script>
 
 <!-- scroll to bottom -->
 <script type="text/javascript">
-    function sendreq(){
+    function sendreq(msg){
         detail_socket.send(JSON.stringify({
-            "index": 0
+            "name": entity_name
         }));
     }
     function addList(msg)
     {
-
+        msg = JSON.parse(msg.data).message;
+        for (let i = 0; i < msg.length;  i++) {
+            let container = document.getElementById("container1-container");
+            let inner_html = '<div class="container1-container2" style="background-color: white; padding: 48px" class="testimonial-card2-testimonial-card testimonial-card2-root-class-name3" >' +
+                '<div class="testimonial-card2-testimonial" id="faqs">' +
+                '<svg viewBox="0 0 1024 1024" class="testimonial-card2-icon">' +
+                '<path d="M225 448c123.712 0 224 100.29 224 224 0 123.712-100.288 224-224 224s-224-100.288-224-224l-1-32c0-247.424 200.576-448 448-448v128c-85.474 0-165.834 33.286-226.274 93.726-11.634 11.636-22.252 24.016-31.83 37.020 11.438-1.8 23.16-2.746 35.104-2.746zM801 448c123.71 0 224 100.29 224 224 0 123.712-100.29 224-224 224s-224-100.288-224-224l-1-32c0-247.424 200.576-448 448-448v128c-85.474 0-165.834 33.286-226.274 93.726-11.636 11.636-22.254 24.016-31.832 37.020 11.44-1.8 23.16-2.746 35.106-2.746z" ></path>' +
+                '</svg>' +
+                '<span class="testimonial-card2-text">' +
+                `<span>Q: ${msg[i][0]}</span>` +
+                '</span> <div class="testimonial-card2-container"> <span class="testimonial-card2-text1">' +
+                `<span>A: ${String(msg[i][1]).substring(0, 150)}</span>` +
+                '</span> </div> </div> </div> </div>';
+            let new_container = document.createElement("div");
+            new_container.setAttribute("class", "container1-container1");
+            new_container.innerHTML = inner_html;
+            container.append(new_container);
+        }
     }
     // add websocket connection
     const ws_protocol = (window.location.protocol == "https:") ? 'wss://': 'ws://';
     const detail_socket = new WebSocket(
-        ws_protocol + window.location.host + '/ws/detail/'
+        ws_protocol + window.location.host + '/ws/detail/' + entity_name + '/'
     );
     detail_socket.onmessage = addList;
 
@@ -233,7 +258,7 @@
     let distance = 50;
     if ((scrollTop + clientHeight) >= (scrollHeight - distance)) {
         console.log("fuck you");
-        await sendreq();
+        await sendreq(entity_name);
     }});
 </script>
 
@@ -241,12 +266,63 @@
 {% if entityRelation %}
 <script type="text/javascript">
     let myChart = echarts.init(document.getElementById("graph_container"));
-    let enetityRelation =[{{ entityRelation|safe }}];
-    let data = []
+    let url = decodeURI(location.search);
+    let enetityRelation =[{{ entityRelation|safe }}][0];
+    let data = [];
+    let links = [];
+    let node = {};
+    if (url.indexOf("?") != -1){
+        str = url.split("=")[1];
+    }
+
+    // the first entity
+    node['name'] = str;
+    node['draggable'] = true;
+    let id = 0;
+    node['id'] = id.toString();
+    data.push(node);
 
     let maxDisplayNode = 15;
-    for (let i = 0; i < Math.min(maxDisplayNode, enetityRelation[0].length); i++){
-        // push nodes to data
+    for (let i = 0; i < Math.min(maxDisplayNode, enetityRelation.length); i++){
+        node = {};
+        node['draggable'] = true;
+        if (enetityRelation[i]['entity2']['品种名称'] != undefined){
+            node['name'] = enetityRelation[i]['entity2']['品种名称'];
+        }
+        else {
+            node['name'] = enetityRelation[i]['entity2']['name'];
+        }
+
+        id = id + 1;
+        node['id'] = id.toString();
+        let flag = 1;
+        relationTarget = id.toString();
+        for (let j = 0; j < data.length; j = j + 1){
+            if (data[j]['name'] === node['name']){
+                flag = 0;
+                relationTarget = data[j]['id'];
+                break;
+            }
+        }
+        relation = {};
+        relation['source'] = 0;
+        relation['target'] = relationTarget;
+        relation['category'] = 0;
+
+        if (flag === 1){
+            data.push(node);
+            relation['value'] = enetityRelation[i]['rel'];
+            relation['symbolSize'] = 10;
+            links.push(relation);
+        }else{
+            maxDisplayNode += 1;
+            for (let j = 0; j < links.length; j++){
+                if (links[j]['target'] === relationTarget){
+                    links[j]['value'] = links[j]['value'] + " | " + enetityRelation[i]['rel'];
+                    break;
+                }
+            }
+        }
     }
 
     let option = {

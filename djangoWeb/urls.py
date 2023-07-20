@@ -23,5 +23,5 @@ from detailsPage.views import show_detail
 urlpatterns = [
     path("admin/", admin.site.urls),
     re_path(r"", include('chatBot.urls')),
-    re_path(r"detail/", show_detail)
+    re_path(r"detail/", show_detail),
 ]

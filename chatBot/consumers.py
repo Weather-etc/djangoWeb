@@ -9,6 +9,7 @@ class ChatConsumer(WebsocketConsumer):
     def __init__(self):
         super().__init__()
         self.bot = Bot()
+        self.entity_name = None;
         self.room_name = None
         self.room_group_name = None
 
@@ -36,7 +37,7 @@ class ChatConsumer(WebsocketConsumer):
         entity_dic, message, _ = self.bot.query(message)
 
         entity = ""
-        for key, value in list(entity_dic):
+        for key, _ in entity_dic.items():
             entity = entity + key + ','
         print('response: ' + message)
         print('entity: ' + entity)
