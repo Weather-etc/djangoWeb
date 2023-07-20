@@ -18,7 +18,6 @@ class detailConsumer(WebsocketConsumer):
     def connect(self):
         self.room_group_name = 'botChat'
         self.entity_name = self.scope['url_route']['kwargs']['entity']
-        # TODO: search mysql database
         # 连接Mysql
         conn = pymysql.connect(
             host='127.0.0.1',
@@ -54,7 +53,6 @@ class detailConsumer(WebsocketConsumer):
         )
 
     def receive(self, text_data):
-        # TODO: send message
         # send initial 10 msgs
         if self.cur_data < len(self.data):
             self.send(text_data=json.dumps({
