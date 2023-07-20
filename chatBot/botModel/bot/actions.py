@@ -107,12 +107,14 @@ class ScinameAction(ArgiActionBase):
             return {"entities": self.entity ,"content":"fallback"}
         self._error_check()
         query = (
-            "match (n{name:'"+ list(self.entity.keys())[0] +"'}) return n.sci_name"
+            "match (n{name:'" + list(self.entity.keys())[0] + "'}) return n.sci_name"
         )
         print(
             f"[DEBUG] query for scinameAction :\n\t{ query }"
             )
 
+        print('*************')
+        print(graph.run(query).data())
         result = graph.run(query).data()[0]['n.sci_name']
 
         return {"entities": self.entity,"agent": 0,"content": f"{list(self.entity.keys())[0]}的学名是{result}"}
