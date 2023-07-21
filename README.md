@@ -6,12 +6,12 @@ to freely chat with it thanks to open source language models.
 ### Environment requirements
 To run this project locally, we provide a list of necessary tools which we used to develop this project.
 
-1. Database
-  1) neo4j version 5.9.0
-  2) MySQL version 8.0.33
-2. Compiler
+1. Database:
+   neo4j version 5.9.0
+   MySQL version 8.0.33
+2. Compiler:
    Python 3.8
-4. Broswer
+3. Broswer:
    Chrome
    
 ### Python environment setup
