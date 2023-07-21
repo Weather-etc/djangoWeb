@@ -164,6 +164,7 @@
 
 .incoming {
   position: relative;
+  margin: 0px;
   width: 70%;
   padding: 15px;
 }
