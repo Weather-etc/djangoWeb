@@ -25,12 +25,13 @@ def show_detail(request):
         rel['rel'] = type(rel['rel']).__name__
 
     # search mysql database
-    entity_des = ""
-    entity_des = graph.run(f"match (n) where n.name='{str(entity)}' return n.profile")
-    if entity_des == "":
-        entity_des = graph.run(f"match (n) where n.品种名称='{str(entity)}' return n.全国品审会审定意见")
-
-    entity_des = list(entity_des.data()[0].values())[0]
+    entity_des = graph.run(f"match (n) where n.name='{str(entity)}' return n.profile").data()
+    if len(entity_des) == 0:
+        entity_des = graph.run(f"match (n) where n.品种名称='{str(entity)}' return n.全国品审会审定意见").data()
+    if len(entity_des) == 0:
+        entity_des = "资料缺失"
+    else:
+        entity_des = list(entity_des[0].values())[0]
 
     return render(request, "detailPage.html", {'entityRelation': json.dumps(answer, ensure_ascii=False),
                                                'des00': json.dumps(entity_des, ensure_ascii=False),
